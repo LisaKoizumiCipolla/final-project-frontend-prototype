@@ -1,5 +1,5 @@
 <template>
-    <header class="">
+    <header class="fixed-top">
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top " id="mainNav">
             <div class="navbar-content d-flex align-items-center justify-content-between px-5">
                 <a class="navbar-brand" href="#page-top">
@@ -35,6 +35,7 @@ header{
     width: 100%;
     background-color: $background;
     color: $text;
+    margin-bottom: 100px;
 }
 
 nav{
