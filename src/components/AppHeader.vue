@@ -1,0 +1,58 @@
+<template>
+    <header class="">
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top " id="mainNav">
+            <div class="navbar-content d-flex align-items-center justify-content-between px-5">
+                <a class="navbar-brand" href="#page-top">
+                    <img src="../assets/navbar-logo.png" alt="...">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                
+                    <svg class="svg-inline--fa fa-bars ms-1" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"></path></svg><!-- <i class="fas fa-bars ms-1"></i> Font Awesome fontawesome.com -->
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#team">Sign in</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="#contact">Log in</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+</template>
+<script>
+export default {
+    name: 'AppHeader'
+}
+</script>
+<style lang="scss" scoped>
+
+@use '../styles/partials/variables' as *;
+
+header{
+    height: 100px;
+    width: 100%;
+    background-color: $background;
+    color: $text;
+}
+
+nav{
+    font-family: 'Raleway', sans-serif;
+    width: 100%;
+    height: 100px;
+
+    .navbar-content{
+        
+    height: 100%;
+    width: 100%;
+    }
+
+    img{
+        height: 65px;
+        filter: invert(1);
+    }
+}
+
+    
+</style>
