@@ -41,7 +41,7 @@ export default {
 
         .text{
             font-family: 'Cinzel Decorative', cursive;
-            padding: 10px 10px 5px;
+            padding: 10px 20px 5px;
 
             h2{
                 font-size: 1.5rem;
