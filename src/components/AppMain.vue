@@ -140,7 +140,7 @@ export default {
   &:active{
     background: $secondary;
   }
-}
+ }
 
 .btn:hover {
   box-shadow: 0 0 20px 0px $secondary;
