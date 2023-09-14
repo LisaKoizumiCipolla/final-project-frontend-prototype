@@ -140,7 +140,7 @@ export default {
   &:active{
     background: $secondary;
   }
-}
+ }
 
 .btn:hover {
   box-shadow: 0 0 20px 0px $secondary;
@@ -182,6 +182,14 @@ export default {
 }
 
  
+}
+
+
+
+@media screen and (max-width: 576px) {
+  .logo{
+    height: 250px;
+  }
 }
 
 </style>
