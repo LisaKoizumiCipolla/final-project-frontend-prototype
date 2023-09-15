@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <img src="../assets/hunters tooth and talon_intero.png" class="logo" alt="">
+    <img src="../../assets/hunters tooth and talon_intero.png" class="logo" alt="">
     <div id="carouselExample" class="carousel slide">
     <div class="carousel-indicators">
        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -63,7 +63,7 @@
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import CardContainer from './CardsHome/CardContainer.vue'
+import CardContainer from '../CardsHome/CardContainer.vue'
 
 export default {
   name: 'AppMain',
@@ -80,7 +80,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 
-@use '../styles/partials/variables' as *;
+@use '../../styles/partials/variables.scss' as *;
 .wrapper{
     margin-top: 100px;
   .logo{
