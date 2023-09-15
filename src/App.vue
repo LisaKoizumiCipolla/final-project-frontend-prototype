@@ -15,17 +15,11 @@ export default {
 
 <template>
   <AppHeader />
- 
-  
 
-  <main>
+  <router-view>
+  </router-view>
 
-<router-view>
-
-</router-view>
-</main>
-
-<AppFooter />
+  <AppFooter />
 </template>
 
 <style lang="scss">

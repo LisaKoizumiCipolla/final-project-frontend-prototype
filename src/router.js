@@ -6,7 +6,9 @@ import Login from './components/pages/registration/Login.vue';
 
 import SignIn from './components/pages/registration/SignIn.vue';
 
-import Homepage from './components/pages/Homepage.vue'
+import Homepage from './components/pages/Homepage.vue';
+
+import Edit from './components/pages/Edit.vue';
 
 
 const router= createRouter({
@@ -29,6 +31,11 @@ const router= createRouter({
             name: 'Registration',
             component: SignIn,
         },
+        {
+            path: '/edit-profile',
+            name: 'Edit',
+            component: Edit,
+        }
     ]
 
 })
