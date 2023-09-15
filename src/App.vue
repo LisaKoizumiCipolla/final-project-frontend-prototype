@@ -1,13 +1,13 @@
 <script>
 import AppHeader from './components/AppHeader.vue';
-import Edit from './components/Edit.vue';
+
 import AppFooter from './components/AppFooter.vue'
 
 export default {
   name: 'App',
   components: {
     AppHeader,
-    Edit,
+    
     AppFooter
   },
 }
@@ -15,8 +15,17 @@ export default {
 
 <template>
   <AppHeader />
-  <Edit />
-  <AppFooter />
+ 
+  
+
+  <main>
+
+<router-view>
+
+</router-view>
+</main>
+
+<AppFooter />
 </template>
 
 <style lang="scss">
