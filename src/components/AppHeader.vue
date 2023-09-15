@@ -72,6 +72,7 @@ header{
     background-color: $background;
     color: $text;
     margin-bottom: 100px;
+    
 }
 
 nav{
