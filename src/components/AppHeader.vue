@@ -2,7 +2,7 @@
     <header class="fixed-top">
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top " id="mainNav">
             <div class="navbar-content d-flex align-items-center justify-content-between px-5">
-                <a class="navbar-brand" href="#page-top">
+                <a class="navbar-brand" href="./">
                     <img src="../assets/navbar-logo.png" alt="...">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,10 +12,16 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                         <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#team">Sign in</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="#contact">Log in</a></li>
+                        <li class="nav-item" v-for = "link in links">
+
+                            <router-link :to="link.route" class="nav-link">
+                                {{ link.name }}
+                            </router-link>
+                            
+                            
+                            
+                            </li>
+                        
                     </ul>
                 </div>
             </div>
@@ -24,7 +30,37 @@
 </template>
 <script>
 export default {
-    name: 'AppHeader'
+    name: 'AppHeader',
+
+    data() {
+        return {
+            links : [
+
+                {
+                    route: './',
+                    name: 'HOME'
+                },
+                {
+                    route: './services',
+                    name: 'SERVICES'
+                },
+                {
+                    route: './about',
+                    name: 'ABOUT'
+                },                             
+                
+                {
+                    route: './registration',
+                    name: 'SIGNIN'
+                },
+                {
+                    route: './login',
+                    name: 'LOGIN'
+                },
+            ]
+           
+        }
+    },
 }
 </script>
 <style lang="scss" scoped>
@@ -37,6 +73,7 @@ header{
     background-color: $background;
     color: $text;
     margin-bottom: 100px;
+    
 }
 
 nav{
