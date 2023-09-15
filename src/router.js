@@ -10,6 +10,8 @@ import Homepage from './components/pages/Homepage.vue';
 
 import Edit from './components/pages/Edit.vue';
 
+import Dashboard from './components/pages/Dashboard.vue';
+
 
 const router= createRouter({
     history: createWebHistory(),
@@ -35,6 +37,12 @@ const router= createRouter({
             path: '/edit-profile',
             name: 'Edit',
             component: Edit,
+        },
+
+        {
+            path: '/dashboard',
+            name: 'Dashboard',
+            component: Dashboard,
         }
     ]
 
