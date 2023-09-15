@@ -1,7 +1,7 @@
 <template>
-   <section class="vh-100" style="background-color: #140F0F;">
-  <div class="container h-100">
-    <div class="row d-flex justify-content-center align-items-center h-100">
+   <section class="" style="background-color: #140F0F;">
+  <div class="container">
+    <div class="row d-flex justify-content-center align-items-center">
       <div class="col-lg-12 col-xl-11">
         <div class="card text-black" style="border-radius: 25px; background-color: #70000B;">
           <div class="card-body p-md-5">
@@ -97,6 +97,10 @@ export default {
         //font-family: 'Cinzel Decorative', cursive;
         font-weight: 600;
         font-family: 'Raleway';
+    }
+
+    .card{
+      margin: 150px 0 100px;
     }
     .btn {
     margin-bottom: 100px;
