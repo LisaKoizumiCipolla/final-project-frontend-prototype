@@ -10,6 +10,8 @@ import Homepage from './components/pages/Homepage.vue';
 
 import Edit from './components/pages/Edit.vue';
 
+import Search from './components/pages/Search.vue';
+
 
 const router= createRouter({
     history: createWebHistory(),
@@ -35,6 +37,11 @@ const router= createRouter({
             path: '/edit-profile',
             name: 'Edit',
             component: Edit,
+        },
+        {
+            path: '/search',
+            name: 'Search',
+            component: Search,
         }
     ]
 
