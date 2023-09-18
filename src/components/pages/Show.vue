@@ -12,7 +12,7 @@
 </template>
 <script>
 import axios from 'axios';
-import SingleCard from '../pages/SingleHunter.vue';
+//import SingleHunter from '../pages/SingleHunter.vue';
 
 export default {
     name: 'Show',
@@ -39,7 +39,6 @@ export default {
     created() {
         this.getHunter();
     },
-    components: { SingleCard }
 }
 </script>
 <style lang="scss" scoped>
