@@ -47,7 +47,7 @@
                     <input v-on="cv" type="file" name="image" id="image" class="form-control" placeholder="Upload your image" value="{{ old('image', '') }}"> 
                 </div>
                 <div class="checkbox-wrapper">  <!-- v-for="specialization in specializations" --> 
-                    <input v-model="services" type="text" name="specialization[]" class="form-check-input" id="specialization" value="{{ specialization.id }}">
+                    <!--<input v-model="services" type="text" name="specialization[]" class="form-check-input" id="specialization" value="{{ specialization.id }}"> -->
                     <label for="specialization" class="form-check-label me-2 ps-2">
                        Specialization   <!-- specialization.name  --> 
                     </label>
