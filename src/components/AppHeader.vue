@@ -81,6 +81,15 @@ nav{
         
     height: 100%;
     width: 100%;
+
+    ul{
+        li{
+                transition: all 2s;
+            &:hover{
+                text-decoration:underline;
+            }
+        }
+    }
     }
 
     img{
