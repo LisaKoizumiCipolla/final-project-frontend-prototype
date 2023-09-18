@@ -33,6 +33,10 @@ export default {
             links : [
 
                 {
+                    route: './dashboard',
+                    name: 'DASHBOARD'
+                },
+                {
                     route: './',
                     name: 'HOME'
                 },

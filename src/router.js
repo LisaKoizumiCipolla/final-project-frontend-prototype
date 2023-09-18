@@ -15,6 +15,10 @@ import Show from './components/pages/Show.vue';
 
 //import auth from "@/middleware/auth";
 
+import Dashboard from './components/pages/Dashboard.vue';
+
+import Search from './components/pages/Search.vue';
+
 
 const router= createRouter({
     history: createWebHistory(),
@@ -54,6 +58,18 @@ const router= createRouter({
             component: () =>
             import( "../views/Dashboard"),
           } */
+        
+
+        {
+            path: '/dashboard',
+            name: 'Dashboard',
+            component: Dashboard,
+        },
+        {
+            path: '/search',
+            name: 'Search',
+            component: Search,
+        }
     ]
 
 })
