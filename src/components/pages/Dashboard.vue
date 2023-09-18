@@ -152,6 +152,7 @@
                             </div>
                             <!-- Card Body -->
                             <div class="card-body">
+                                
                                 <div class="chart-pie pt-4 pb-2"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
                                     <canvas id="myPieChart" width="379" height="245" style="display: block; width: 379px; height: 245px;" class="chartjs-render-monitor"></canvas>
                                 </div>
