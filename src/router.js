@@ -8,7 +8,7 @@ import SignIn from './components/pages/registration/SignIn.vue';
 
 import Homepage from './components/pages/Homepage.vue';
 
-import Edit from './components/pages/Edit.vue';
+//import Edit from './components/pages/Edit.vue';
 
 import Show from './components/pages/Show.vue';
 
@@ -40,14 +40,15 @@ const router= createRouter({
             name: 'Registration',
             component: SignIn,
         },
-        {
+       
+       /** {
             path: '/edit_profile',
             path: '/edit_profile',
             name: 'Edit',
             component: Edit,
-        },
+        }, */
         {
-            path: '/show_hunter',
+            path: '/show_hunter/:id',
             name: 'Show',
             component: Show,
         },

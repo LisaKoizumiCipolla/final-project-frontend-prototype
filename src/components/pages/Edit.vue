@@ -1,4 +1,4 @@
-<template>
+<!--<template>
     <section>
         <div class="wrapper d-flex flex-column">
 
@@ -38,19 +38,22 @@
                 </div>
                 <div class="mb-3 col">
                     <label for="image" class="form-label">Image</label> 
-                    <!-- <input type="text" class="form-control" id="image" placeholder="https://example.jpg" name="image"> -->
                     <input v-on="image" type="file" name="image" id="image" class="form-control" placeholder="Upload your image" value="{{ old('image', '') }}"> 
                 </div>
                 <div class="mb-3 col">
                     <label for="image" class="form-label">CV</label> 
-                    <!-- <input type="text" class="form-control" id="image" placeholder="https://example.jpg" name="image"> -->
                     <input v-on="cv" type="file" name="image" id="image" class="form-control" placeholder="Upload your image" value="{{ old('image', '') }}"> 
                 </div>
-                <div class="checkbox-wrapper">  <!-- v-for="specialization in specializations" --> 
+                <div class="checkbox-wrapper"> 
                     <input v-model="services" type="text" name="specialization[]" class="form-check-input" id="specialization" value="{{ specialization.id }}">
                     <label for="specialization" class="form-check-label me-2 ps-2">
-                       Specialization   <!-- specialization.name  --> 
+                       Specialization 
                     </label>
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+                    <textarea  v-model="services" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                 </div>
 
             </div>
@@ -78,7 +81,7 @@ export default {
             image: '',
             address: '',
             cv: '',
-            specialization: '',
+            services: '',
             apiUrl: 'http://127.0.0.1:8000/api/admin/hunters'
         }
     },
@@ -100,7 +103,7 @@ export default {
             image: this.image,
             address: this.address,
             cv: this.cv,
-            specialization: this.specialization,
+            services: this.services,
             })
                 .then((response) => {
                 console.log(this.email, this.password);
@@ -116,7 +119,7 @@ export default {
             this.image = '';
             this.address = '';
             this.cv = '';
-            this.specialization = '';
+            this.services = '';
         }
     },
 
@@ -227,4 +230,4 @@ section{
   transform: scale(0.85);
 }
 
-</style>
+</style> -->
