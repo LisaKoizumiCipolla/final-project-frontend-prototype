@@ -1,6 +1,6 @@
 <template>
-    <div class="wrapper">
-        <div class="data" v-for="hunter in hunters">
+    <div class="wrapper d-flex align-items-center justify-content-center">
+        <div class="data">
             <img :src="hunter.image" alt="">
             <h2>
                 {{ hunter.name }} {{ hunter.surname }}
@@ -8,51 +8,50 @@
         </div>
         <div class="contact"></div>
     </div>
+
 </template>
 <script>
 import axios from 'axios';
+//import SingleHunter from '../pages/SingleHunter.vue';
 
 export default {
-    name:'Show',
-
+    name: 'Show',
+    props: {
+        'hunter': Object
+    },
     data() {
         return {
-            hunters: [],
-            apiUrl: 'http://127.0.0.1:8000/api/hunters'
-        }
+            apiUrl: 'http://127.0.0.1:8000',
+            hunter: false,
+        };
     },
-
     methods: {
         getHunter() {
-            const params = {}
-            // console.log(params);
-            axios.get(this.apiUrl, { params })
-                .then((response) => {
-                console.log(response.data.results);
-                this.hunters = response.data.results.data;
-            })
-                .catch(function (error) {
+            console.log(this.$route.params.id);
+            axios.get(`${this.apiUrl}/api/hunters/${this.$route.params.id}`).then((response) => {
+                console.log(response);
+                this.cocktail = response.data.results.data;
+            }).catch(function (error) {
                 console.log(error);
-            })
-                .finally(function () {
             });
         }
     },
     created() {
         this.getHunter();
-    } 
+    },
 }
 </script>
 <style lang="scss" scoped>
 @use '../../styles/partials/variables.scss' as *;
     .wrapper{
         margin: 0 auto;
-        margin-top: 150px;
-        display: flex;
+        padding-top: 150px;
         background-color: $background;
 
         .data{
             width: 40%;
+            height: 400px;
+            margin: 100px;
             background-color: $text;
 
             img{

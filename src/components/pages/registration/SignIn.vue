@@ -98,7 +98,7 @@ export default {
             })
                 .then((response) => {
                 console.log(this.email, this.password);
-                this.response = response.data.success;
+                this.response = response.data.success.data;
             })
                 .catch(function (error) {
                 console.log(error.response.data);
