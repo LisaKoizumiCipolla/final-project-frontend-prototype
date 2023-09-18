@@ -12,6 +12,8 @@ import Edit from './components/pages/Edit.vue';
 
 import Dashboard from './components/pages/Dashboard.vue';
 
+import Search from './components/pages/Search.vue';
+
 
 const router= createRouter({
     history: createWebHistory(),
@@ -43,6 +45,11 @@ const router= createRouter({
             path: '/dashboard',
             name: 'Dashboard',
             component: Dashboard,
+        },
+        {
+            path: '/search',
+            name: 'Search',
+            component: Search,
         }
     ]
 
