@@ -57,19 +57,50 @@
  </section>
      
  </template>
+
  <script>
- 
- 
  import 'bootstrap/dist/css/bootstrap.min.css';
  import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+ import AuthService from "../../../services/AuthService";
  
  export default {
-     name : 'Login'
- }
- </script>
+  name : 'Login',
+  data() {
+    return {
+      email: null,
+      password: null,
+      error: null,
+    };
+  },
+  methods: {
+    async login() {
+      const payload = {
+        email: this.email,
+        password: this.password,
+      };
+      this.error = null;
+      try {
+        await AuthService.login(payload);
+        const authUser = await this.$store.dispatch("auth/getAuthUser");
+        if (authUser) {
+          this.$store.dispatch("auth/setGuest", { value: "isNotGuest" });
+          this.$router.push("/dashboard");
+        } else {
+          const error = Error(
+            "Unable to fetch user after login, check your API settings."
+          );
+          error.name = "Fetch User";
+          throw error;
+        }
+      } catch (error) {
+        this.error = getError(error);
+      }
+    },
+  },
+}
+</script>
+
  <style lang="scss" scoped>
- 
- 
  @use '../../../styles/partials/variables.scss' as *;
  
      .container{
