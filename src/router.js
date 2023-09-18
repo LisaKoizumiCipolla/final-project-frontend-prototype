@@ -12,7 +12,6 @@ import Edit from './components/pages/Edit.vue';
 
 import Show from './components/pages/Show.vue';
 
-import Show from './components/pages/Show.vue';
 
 //import auth from "@/middleware/auth";
 
@@ -42,11 +41,6 @@ const router= createRouter({
             path: '/edit_profile',
             name: 'Edit',
             component: Edit,
-        },
-        {
-            path: '/show_hunter',
-            name: 'Show',
-            component: Show,
         },
         {
             path: '/show_hunter',
