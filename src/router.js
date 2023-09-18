@@ -10,6 +10,8 @@ import Homepage from './components/pages/Homepage.vue';
 
 import Edit from './components/pages/Edit.vue';
 
+import Show from './components/pages/Show.vue';
+
 
 const router= createRouter({
     history: createWebHistory(),
@@ -32,9 +34,14 @@ const router= createRouter({
             component: SignIn,
         },
         {
-            path: '/edit-profile',
+            path: '/edit_profile',
             name: 'Edit',
             component: Edit,
+        },
+        {
+            path: '/Show_hunter',
+            name: 'Show',
+            component: Show,
         }
     ]
 
