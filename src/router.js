@@ -10,6 +10,11 @@ import Homepage from './components/pages/Homepage.vue';
 
 import Edit from './components/pages/Edit.vue';
 
+import Show from './components/pages/Show.vue';
+
+
+//import auth from "@/middleware/auth";
+
 import Dashboard from './components/pages/Dashboard.vue';
 
 import Search from './components/pages/Search.vue';
@@ -36,10 +41,24 @@ const router= createRouter({
             component: SignIn,
         },
         {
-            path: '/edit-profile',
+            path: '/edit_profile',
+            path: '/edit_profile',
             name: 'Edit',
             component: Edit,
         },
+        {
+            path: '/show_hunter',
+            name: 'Show',
+            component: Show,
+        },
+       /**  {
+            path: "/dashboard",
+            name: "dashboard",
+            meta: { middleware: [auth] },
+            component: () =>
+            import( "../views/Dashboard"),
+          } */
+        
 
         {
             path: '/dashboard',
