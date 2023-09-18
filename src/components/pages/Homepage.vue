@@ -63,8 +63,7 @@
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import CardContainer from '../CardsHome/CardContainer.vue'
-
+import CardContainer from '../CardsHome/CardContainer.vue';
 export default {
   name: 'AppMain',
   components:{

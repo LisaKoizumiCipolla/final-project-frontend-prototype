@@ -12,6 +12,8 @@
             <p class="card-meal-type">{{ hunter.surname }}</p>
             <h2 class="card-title">{{ hunter.name }}</h2>
             <p> {{ hunter.user_id }}</p>
+
+            
         </div>
     </div>
   </div>
@@ -41,7 +43,7 @@ export default {
             axios.get(apiUrl, {params})
             .then((response)=>{
                 // console.log(response.data.results.data);
-                this.hunters= response.data.results;
+                this.hunters= response.data.results.data;
             })
             .catch(function (error) {
                 console.log(error);
