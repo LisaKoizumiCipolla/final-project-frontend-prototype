@@ -49,7 +49,6 @@ export default {
 </script>
 <style lang="scss" scoped>
 @use '../../styles/partials/variables.scss' as *;
-@use '../../styles/partials/_mixins.scss' as *;
 
 .background-page{
     background-color: $background;
