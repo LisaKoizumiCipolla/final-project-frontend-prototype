@@ -33,31 +33,36 @@ export default {
             links : [
 
                 {
-                    route: './dashboard',
+                    route: '/dashboard',
                     name: 'DASHBOARD'
                 },
                 {
-                    route: './',
+                    route: '/',
                     name: 'HOME'
                 },
                 {
-                    route: './services',
+                    route: '/services',
                     name: 'SERVICES'
                 },
                 {
-                    route: './about',
+                    route: '/about',
                     name: 'ABOUT'
                 },                             
                 
                 {
-                    route: './registration',
+                    route: '/registration',
                     name: 'SIGNIN'
                 },
                 {
-                    route: './login',
+                    route: '/login',
                     name: 'LOGIN'
                 },
+                {
+                    route: '/show_hunter/:id',
+                    name: 'SHOW'
+                },
             ]
+            
            
         }
     },
