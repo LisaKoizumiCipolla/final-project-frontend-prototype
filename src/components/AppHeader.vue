@@ -33,27 +33,36 @@ export default {
             links : [
 
                 {
-                    route: './',
+                    route: '/dashboard',
+                    name: 'DASHBOARD'
+                },
+                {
+                    route: '/',
                     name: 'HOME'
                 },
                 {
-                    route: './services',
+                    route: '/services',
                     name: 'SERVICES'
                 },
                 {
-                    route: './about',
+                    route: '/about',
                     name: 'ABOUT'
                 },                             
                 
                 {
-                    route: './registration',
+                    route: '/registration',
                     name: 'SIGNIN'
                 },
                 {
-                    route: './login',
+                    route: '/login',
                     name: 'LOGIN'
                 },
+                {
+                    route: '/show_hunter/:id',
+                    name: 'SHOW'
+                },
             ]
+            
            
         }
     },
@@ -81,6 +90,15 @@ nav{
         
     height: 100%;
     width: 100%;
+
+    ul{
+        li{
+                transition: all 2s;
+            &:hover{
+                text-decoration:underline;
+            }
+        }
+    }
     }
 
     img{

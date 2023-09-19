@@ -79,24 +79,24 @@
      }
  
      .btn {
-     margin-bottom: 100px;
-   width: 235px;
-   height: 50px;
-   padding: 0 15px;
-   border-radius: 5px;
-   border: none;
-   transition: all 0.5s ease-in-out;
-   font-size: 20px;
-     font-family: 'Cinzel Decorative', cursive;
-   font-weight: 600;
-   display: flex;
-   align-items: center;
-   background-color: white;
-   color: black;
- 
-   &:active{
-     background-color: white;
-   }
+      margin-bottom: 100px;
+      width: 235px;
+      height: 50px;
+      padding: 0 15px;
+      border-radius: 5px;
+      border: none;
+      transition: all 0.5s ease-in-out;
+      font-size: 20px;
+        font-family: 'Cinzel Decorative', cursive;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      background-color: white;
+      color: black;
+    
+      &:active{
+        background-color: white;
+      }
   }
  
   .btn:hover {

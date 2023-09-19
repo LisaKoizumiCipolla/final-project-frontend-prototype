@@ -4,23 +4,19 @@
       <input type="text" name="text" id="searchText" class="navbar" v-model="searchText">
       <button @click="newSearch(searchText)" class="custom-btn btn">search</button>
     </div>
-    <div class="card" v-for="hunter in hunters">
-        <div class="card-image">
-            <img :src="hunter.image" alt="">
-        </div>
-        <div class="card-text">
-            <p class="card-meal-type">{{ hunter.surname }}</p>
-            <h2 class="card-title">{{ hunter.name }}</h2>
-            <p> {{ hunter.user_id }}</p>
-        </div>
-    </div>
+    <SingleHunter  v-for="hunter in hunters" :hunter="hunter"/>
   </div>
     
 </template>
 <script>
 import axios from 'axios';
+import SingleHunter from '../pages/SingleHunter.vue';
+
 export default {
     name: 'Search',
+    components: {
+      SingleHunter
+    },
 
     data() {
         return {
@@ -41,7 +37,7 @@ export default {
             axios.get(apiUrl, {params})
             .then((response)=>{
                 // console.log(response.data.results.data);
-                this.hunters= response.data.results;
+                this.hunters= response.data.results.data;
             })
             .catch(function (error) {
                 console.log(error);
@@ -216,6 +212,10 @@ export default {
   flex-direction:column;
   width:400px;
   margin-bottom:60px;
+
+  &:hover{
+    cursor: pointer;
+  }
 }
 .card>div{
   box-shadow:0 15px 20px 0 rgba(0,0,0,0.5);
