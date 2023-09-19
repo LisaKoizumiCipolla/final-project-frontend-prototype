@@ -25,13 +25,13 @@
                 <!-- Content Row -->
                 <div class="row d-flex justify-content-between">
 
-                    <div class="user_detail col-5 card shadow mb-4 pt-4 pb-4">
+                    <div class="user_detail user_size col-5 card shadow mb-4 pt-4 pb-4">
                         <div class="image-container">
                             <img :src=" hunters[0].image " alt="">
                         </div>
                         
                     </div>
-                    <div class="user_detail col-xl-6 card shadow mb-4 pt-4">
+                    <div class="user_detail col-xl-8 card shadow mb-4 pt-4">
                         <div class="col-xl-12 col-md-6 mb-4">
                         <div class="card border-left-primary shadow h-100 py-2">
                             <div class="card-body">
@@ -248,14 +248,22 @@ export default {
         padding-top: 8rem;
         
     }
-    
-    .image-container{
+    .user_size{
+        height: 300px;
+        width: 300px;
 
-        height: 500px;
-    
-        object-fit: cover;
-        img{
+        .image-container{
+
             height: 100%;
+
+            object-fit: cover;
+        img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: top;
+        }
         }
     }
+    
 </style>
