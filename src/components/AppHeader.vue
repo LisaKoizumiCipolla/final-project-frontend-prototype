@@ -2,7 +2,7 @@
     <header class="fixed-top">
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top " id="mainNav">
             <div class="navbar-content d-flex align-items-center justify-content-between px-5">
-                <a class="navbar-brand" href="./">
+                <a class="navbar-brand" href="/">
                     <img src="../assets/navbar-logo.png" alt="...">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,10 +33,6 @@ export default {
             links : [
 
                 {
-                    route: '/dashboard',
-                    name: 'DASHBOARD'
-                },
-                {
                     route: '/',
                     name: 'HOME'
                 },
@@ -56,10 +52,6 @@ export default {
                 {
                     route: '/login',
                     name: 'LOGIN'
-                },
-                {
-                    route: '/show_hunter/:id',
-                    name: 'SHOW'
                 },
             ]
             

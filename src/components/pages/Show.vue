@@ -22,15 +22,15 @@ export default {
     data() {
         return {
             apiUrl: 'http://127.0.0.1:8000',
-            hunter: false,
+            hunter: '',
         };
     },
     methods: {
         getHunter() {
-            console.log(this.$route.params.id);
-            axios.get(`${this.apiUrl}/api/hunters/${this.$route.params.id}`).then((response) => {
+            console.log(this.$route.params.user_id);
+            axios.get(`${this.apiUrl}/api/hunters/${this.$route.params.user_id}`).then((response) => {
                 console.log(response);
-                this.cocktail = response.data.results.data;
+                this.hunter = response.data.results[5];
             }).catch(function (error) {
                 console.log(error);
             });
