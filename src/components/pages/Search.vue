@@ -43,7 +43,7 @@
 import axios from 'axios';
 import SingleHunter from '../pages/SingleHunter.vue';
 
-
+export default {
   name: 'Search',
   components: {
     SingleHunter

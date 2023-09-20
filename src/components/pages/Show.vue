@@ -166,7 +166,7 @@ export default {
 .contact-hunter{
     background-color: $text;
     border-left: 10px solid $background;
-    padding: 30px 10px 0;
+    padding: 30px 20px 0;
     font-family: 'Raleway', sans-serif;
     font-weight: 600;
 }
