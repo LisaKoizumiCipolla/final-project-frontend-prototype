@@ -1,14 +1,20 @@
 <template>
-    <div class="wrapper d-flex align-items-center justify-content-center">
-        <div class="data">
-            <img :src="hunter.image" alt="">
-            <h2>
-                {{ hunter.name }} {{ hunter.surname }}
-            </h2>
+    <div class="background-page">
+        <div class="container">
+            <div class="row justify-content-center margin-row">
+                <div class="col-12 col-md-6 card-hunter">
+                    <img class="img-fluid" :src="hunter.image" :alt="hunter.name">
+                    <div class="content">
+                        <h2>{{ hunter.name }} {{ hunter.surname }}</h2>
+                        <p class="text-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda dicta laudantium totam facilis ipsam. Labore repellat optio, unde aperiam illum fugit commodi voluptatum. Rem voluptate in accusamus quos error reprehenderit.</p>
+                        <p class="specialization">
+                            Specialization: {{ hunter.specialization }}
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="contact"></div>
     </div>
-
 </template>
 <script>
 import axios from 'axios';
@@ -30,7 +36,7 @@ export default {
             console.log(this.$route.params.id);
             axios.get(`${this.apiUrl}/api/hunters/${this.$route.params.id}`).then((response) => {
                 console.log(response);
-                this.cocktail = response.data.results.data;
+                this.hunter = response.data.results;
             }).catch(function (error) {
                 console.log(error);
             });
@@ -43,26 +49,32 @@ export default {
 </script>
 <style lang="scss" scoped>
 @use '../../styles/partials/variables.scss' as *;
-    .wrapper{
-        margin: 0 auto;
-        padding-top: 150px;
-        background-color: $background;
 
-        .data{
-            width: 40%;
-            height: 400px;
-            margin: 100px;
-            background-color: $text;
+.background-page{
+    background-color: $background;
+}
 
-            img{
-                height: 200px;
-                object-fit: contain;
-            }
-        }
+.card-hunter{
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 20px 30px;
+    padding: 0;
+}
 
-        .contact{
-            width: 30%;
-            background-color: $text;
-        }
-    }
+.margin-row{
+    padding-top: 10rem;
+    padding-bottom: 5rem;
+}
+
+.content{
+    padding: 1.2rem;
+    background-color: white;
+}
+
+img{
+    height: 450px;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+
 </style>
