@@ -18,7 +18,7 @@
 </template>
 <script>
 import axios from 'axios';
-//import SingleHunter from '../pages/SingleHunter.vue';
+///import SingleHunter from '../pages/SingleHunter.vue';
 
 export default {
     name: 'Show',
