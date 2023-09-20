@@ -36,7 +36,7 @@ export default {
             
             axios.get(apiUrl, {params})
             .then((response)=>{
-                // console.log(response.data.results.data);
+               console.log(response.data.results.data);
                 this.hunters= response.data.results.data;
             })
             .catch(function (error) {
