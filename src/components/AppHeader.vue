@@ -11,11 +11,13 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                        <li class="nav-item" v-for = "link in links">
-
-                            <router-link :to="link.route" class="nav-link">
+                        <li class="nav-item" v-for="link in links" :key="link.name">
+                            <router-link v-if="link.name !== 'LOGIN' && link.name !== 'SIGNIN'" :to="link.route" class="nav-link">
                                 {{ link.name }}
                             </router-link>
+                            <a v-else :href="link.route" class="nav-link">
+                                {{ link.name }}
+                            </a>
                         </li>    
                     </ul>
                 </div>
@@ -46,11 +48,11 @@ export default {
                 },                             
                 
                 {
-                    route: '/registration',
+                    route: 'http://127.0.0.1:8000/register',
                     name: 'SIGNIN'
                 },
                 {
-                    route: '/login',
+                    route: 'http://127.0.0.1:8000/login',
                     name: 'LOGIN'
                 },
             ]

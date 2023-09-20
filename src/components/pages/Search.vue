@@ -1,7 +1,7 @@
 <template>
     <div class="container">
     <div class="search-bar">
-      <input type="text" name="text" id="searchText" class="navbar" v-model="searchText">
+      <input type="text" name="text" id="searchText" class="navbar" v-model="searchText" @keyup.enter="newSearch(searchText)">
       <button @click="newSearch(searchText)" class="custom-btn btn">search</button>
     </div>
     <SingleHunter  v-for="hunter in hunters" :hunter="hunter"/>
@@ -62,8 +62,7 @@ export default {
 
 @use '../../styles/partials/variables.scss' as *;
 .container{
-    padding-top: 15rem;
-    background-color: $background;
+    
 }
 
 #header{
@@ -188,13 +187,15 @@ export default {
  width: 100%;
 }
 .container{
+  padding-top: 15rem;
+    background-color: $background;
   width:100%;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   height: 100%;
   display:flex;
   justify-content:space-around;
   flex-wrap:wrap;
-  padding:40px 20px;
+  
   
   background-size:cover;
 }
