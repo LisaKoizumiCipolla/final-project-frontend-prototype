@@ -12,6 +12,8 @@ import Homepage from './components/pages/Homepage.vue';
 
 import Show from './components/pages/Show.vue';
 
+import About from './components/pages/About.vue';
+
 
 //import auth from "@/middleware/auth";
 
@@ -70,6 +72,11 @@ const router= createRouter({
             path: '/search',
             name: 'Search',
             component: Search,
+        },
+        {
+            path: '/about',
+            name: 'About',
+            component: About,
         }
     ]
 
