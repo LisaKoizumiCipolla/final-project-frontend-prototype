@@ -13,8 +13,8 @@
                             <p class="specialization">
                                 Specializations: 
                                 <ul>
-                                    <li v-for="spcialization in hunter.specializations">
-                                        {{ hunter.specialization }}
+                                    <li v-for="specialization in hunter.specializations">
+                                        {{ specialization.name }}
                                     </li>
                                 </ul>
                             </p>
