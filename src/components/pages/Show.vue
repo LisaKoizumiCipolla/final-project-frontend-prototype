@@ -28,13 +28,13 @@ export default {
     data() {
         return {
             apiUrl: 'http://127.0.0.1:8000',
-            hunter: '',
+            hunter: false,
         };
     },
     methods: {
         getHunter() {
-            console.log(this.$route.params.user_id);
-            axios.get(`${this.apiUrl}/api/hunters/${this.$route.params.user_id}`).then((response) => {
+            console.log(this.$route.params.id);
+            axios.get(`${this.apiUrl}/api/hunters/${this.$route.params.id}`).then((response) => {
                 console.log(response);
                 this.hunter = response.data.results;
 
