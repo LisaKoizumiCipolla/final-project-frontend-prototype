@@ -8,7 +8,9 @@
             <router-link   :to="{name: 'Show', params: {id:hunter.user_id}}">
                 <p class="card-meal-type">{{ hunter.surname }}</p>
                 <h2 class="card-title">{{ hunter.name }}</h2>
-                <p> {{ hunter.user_id }}</p>
+                <p v-for="specialization in hunter.specializations">
+                  {{ specialization.name }}
+                </p>
             </router-link>
         </div>
     </div>
