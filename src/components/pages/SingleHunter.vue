@@ -1,7 +1,8 @@
 <template>
     <div class="card">
         <div class="card-image">
-            <img :src="hunter.image" alt="">
+            <img v-if="hunter.image.startsWith('http')" :src="hunter.image" alt="">
+            <img v-else :src="'http://127.0.0.1:8000/storage/' + hunter.image" alt="">
         </div>
         <div class="card-text">
             <router-link   :to="{name: 'Show', params: {id:hunter.user_id}}">
