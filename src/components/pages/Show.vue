@@ -4,7 +4,8 @@
             <div class=" hunter row d-flex flex-row justify-content-center margin-row">
                 <div class="card-hunter col-8">
                     <div class="presentation d-flex">
-                        <img class="img-fluid" :src="'http://127.0.0.1:8000/storage/' + hunter.image" :alt="hunter.name">
+                        <img v-if="hunter.image.startsWith('http')" :src="hunter.image" alt="">
+                        <img v-else :src="'http://127.0.0.1:8000/storage/' + hunter.image" alt="">
                         <div class="data">
                             <h2>{{ hunter.name }} {{ hunter.surname }}</h2>
                             <p class="address"><i class="fa-solid fa-location-dot fa-sm"></i> {{ hunter.address }} </p>
