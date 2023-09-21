@@ -2,9 +2,9 @@ import { createRouter, createWebHistory } from "vue-router";
 
 // importo componenti
 
-import Login from './components/pages/registration/Login.vue';
+// import Login from './components/pages/registration/Login.vue';
 
-import SignIn from './components/pages/registration/SignIn.vue';
+// import SignIn from './components/pages/registration/SignIn.vue';
 
 import Homepage from './components/pages/Homepage.vue';
 
@@ -17,7 +17,7 @@ import About from './components/pages/About.vue';
 
 //import auth from "@/middleware/auth";
 
-import Dashboard from './components/pages/Dashboard.vue';
+// import Dashboard from './components/pages/Dashboard.vue';
 
 import Search from './components/pages/Search.vue';
 
@@ -30,17 +30,6 @@ const router= createRouter({
             path: '/',
             name: 'Homepage',
             component: Homepage,
-        },
-
-        {
-            path: '/login',
-            name: 'Login',
-            component: Login,
-        },
-        {
-            path: '/registration',
-            name: 'Registration',
-            component: SignIn,
         },
        
        /** {
@@ -62,12 +51,6 @@ const router= createRouter({
             import( "../views/Dashboard"),
           } */
         
-
-        {
-            path: '/dashboard',
-            name: 'Dashboard',
-            component: Dashboard,
-        },
         {
             path: '/search',
             name: 'Search',
@@ -77,7 +60,7 @@ const router= createRouter({
             path: '/about',
             name: 'About',
             component: About,
-        }
+        },
     ]
 
 })
