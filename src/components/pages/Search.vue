@@ -36,24 +36,28 @@
       </div>
       
   </div>
+
+  <HunterSelect @filteredHunters="getHunters"/>
   </section>  
   
 </template>
 <script>
 import axios from 'axios';
 import SingleHunter from '../pages/SingleHunter.vue';
+import HunterSelect from '../pages/HunterSelect.vue';
 
 export default {
   name: 'Search',
   components: {
-    SingleHunter
+    SingleHunter,
+    HunterSelect
   },
 
   data() {
       return {
           hunters:[],
           apiUrl:'http://127.0.0.1:8000/api/hunters',
-          searchText : '',
+          // searchText : '',
           nextPageUrl : '',
           currentPageNo: '',
           prevPageUrl : '',
@@ -79,6 +83,27 @@ export default {
               console.log(error);
           })
       },
+
+
+      // getHunters(filter){
+      //       axios.get(this.apiUrl, {
+      //           params: {
+      //               num: 20,
+      //               offset: 0,
+      //               specialization : filter
+      //           }
+      //       })
+      //           .then( (response) => {
+      //               // handle success
+      //               this.hunters = response.data.results;
+      //               console.log(this.hunters);
+      //           })
+      //           .catch(function (error) {
+      //               // handle error
+      //               console.log(error);
+      //           });
+      //   },
+        
 
       nextPage(){
           // alert('next page');
