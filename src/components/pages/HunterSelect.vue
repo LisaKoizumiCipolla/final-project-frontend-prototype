@@ -5,7 +5,8 @@
                 <div class="filter-bar">
                      <label for="type-select">Specializations</label>
                   <select name="type-select" id="type-select" v-model="search"
-                    @change="$emit('filteredHunters', search)">
+                    @change="getSpecializations">
+                    <option value="" selected>Choose Specializations</option>
                         <option v-for="specialization in specializations" :value="specialization.name">
                              {{ specialization.name }}
                         </option>
@@ -30,7 +31,11 @@
   
     methods: {
       getSpecializations() {
-        axios.get('http://127.0.0.1:8000/api/specializations')
+        axios.get('http://127.0.0.1:8000/api/specializations',{
+            params:{
+                specialization: this.search
+            }
+        })
           .then((response) => {
             // handle success
             this.specializations = response.data.results;
@@ -41,10 +46,10 @@
             console.log(error);
           });
       },
-    },
-
-    filterHunters() {
-      this.$emit('filteredHunters', this.search);
+      
+          filterHunters() {
+            this.$emit('filteredHunters', this.search);
+          },
     },
   
     created() {

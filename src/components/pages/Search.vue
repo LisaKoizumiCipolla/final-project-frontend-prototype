@@ -37,7 +37,7 @@
       
   </div>
 
-  <HunterSelect @filteredHunters="getHunters"/>
+  <HunterSelect @filteredHunters="filterHunters"/>
   </section>  
   
 </template>
@@ -57,7 +57,7 @@ export default {
       return {
           hunters:[],
           apiUrl:'http://127.0.0.1:8000/api/hunters',
-          // searchText : '',
+          searchText : '',
           nextPageUrl : '',
           currentPageNo: '',
           prevPageUrl : '',
@@ -65,7 +65,7 @@ export default {
   },
 
   methods: {
-      getHunters(apiUrl = this.apiUrl, nameQuery = false){
+      getHunters(apiUrl = this.apiUrl, nameQuery = false,specializationQuery = false){
           const params = { }
           if(nameQuery){
               params.search = nameQuery;
@@ -85,26 +85,6 @@ export default {
       },
 
 
-      // getHunters(filter){
-      //       axios.get(this.apiUrl, {
-      //           params: {
-      //               num: 20,
-      //               offset: 0,
-      //               specialization : filter
-      //           }
-      //       })
-      //           .then( (response) => {
-      //               // handle success
-      //               this.hunters = response.data.results;
-      //               console.log(this.hunters);
-      //           })
-      //           .catch(function (error) {
-      //               // handle error
-      //               console.log(error);
-      //           });
-      //   },
-        
-
       nextPage(){
           // alert('next page');
           this.getHunters(this.nextPageUrl);
@@ -117,7 +97,10 @@ export default {
 
       newSearch(nameToSearch){
               this.getHunters(this.apiUrl, nameToSearch);
-      }
+      },
+      filterHunters(searchText) {
+      this.getHunters(this.apiUrl, searchText);
+    },
 
 
   },
