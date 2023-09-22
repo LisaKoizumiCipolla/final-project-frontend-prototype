@@ -33,7 +33,7 @@
         axios.get('http://127.0.0.1:8000/api/specializations')
           .then((response) => {
             // handle success
-            this.specializations = response.data.results;
+            this.specializations = response.data.results.data;
             console.log(this.specializations);
           })
           .catch(function (error) {
