@@ -32,35 +32,38 @@
         </button>
          
       </nav>
-        <SingleHunter  v-for="hunter in hunters" :hunter="hunter"/>
+        <SingleHunter/>
       </div>
       
   </div>
 
-  <HunterSelect @filteredHunters="getHunters"/>
+
   </section>  
   
 </template>
 <script>
 import axios from 'axios';
+import {store} from '../../store.js';
 import SingleHunter from '../pages/SingleHunter.vue';
-import HunterSelect from '../pages/HunterSelect.vue';
 
 export default {
   name: 'Search',
   components: {
     SingleHunter,
-    HunterSelect
+   
   },
 
   data() {
       return {
+
+          store,
           hunters:[],
           apiUrl:'http://127.0.0.1:8000/api/hunters',
           // searchText : '',
           nextPageUrl : '',
           currentPageNo: '',
           prevPageUrl : '',
+          
       }
   },
 
@@ -76,6 +79,7 @@ export default {
           .then((response)=>{
               // console.log(response.data.results.data);
               this.hunters= response.data.results.data;
+              console.log(this.hunters);
               this.nextPageUrl = response.data.results.next_page_url;
               this.prevPageUrl = response.data.results.prev_page_url;
           })

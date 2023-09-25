@@ -56,27 +56,99 @@
             <span class="text"><a href="/search">All Hunters</a></span>
         </button>
 
+        <div>
+          <label for="cards-select"></label>
+          <select name="type-select" id="type-select" v-model="search">
+                    
+                    <option v-for="specialization in specializations" :value="specialization.name">
+                         {{ specialization.name }}
+                    </option>
+                    
+              </select>
+              <button @click="getFilteredHunter(search)">
+                <router-link to="/search">Vai a Search</router-link>
+                           
+                  </button>
+
+                  <div v-for="hunter in huntersList">
+  
+                    {{ hunter.name }}
+                    {{ hunter.surname }}
+                </div>
+        </div>
+        
+
   </div>
 
 </template>
 <script>
-
+import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import CardContainer from '../CardsHome/CardContainer.vue'
+import CardContainer from '../CardsHome/CardContainer.vue';
+import {store} from '../../store.js';
 
 export default {
   name: 'AppMain',
   components:{
-    CardContainer
+    CardContainer,
+ 
   },
   data() {
     return {
+      links : [
+
+                {
+                    route: '/search',
+                    name: 'Filtered Hunter'
+                },
+            ],
+      search:'',      
+      store,
+      specializations : [],
+      apiUrl:'http://127.0.0.1:8000/api/select'
     };
   },
   methods: {
+
+    getFilteredHunter(search) {
+    axios.get(this.apiUrl, {
+        params: {
+          specialization: search
+        }
+      })
+      .then((response) => {
+        this.store.huntersList = response.data.results.data;
+        this.store.searchValue = search;
+        console.log(this.store.searchValue);
+        console.log(this.store.huntersList);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   },
-};
+
+    getSpecializations() {
+        axios.get('http://127.0.0.1:8000/api/specializations')
+          .then((response) => {
+            // handle success
+            this.specializations = response.data.results;
+            this.store.specializationsList = response.data.results;
+            console.log(this.specializations);
+          })
+          .catch(function (error) {
+            // handle error
+            console.log(error);
+          });
+      },
+    },
+  
+    created() {
+      this.getSpecializations();
+    },
+
+   
+}
 </script>
 <style lang="scss" scoped>
 
