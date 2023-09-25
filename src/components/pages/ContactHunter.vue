@@ -32,7 +32,7 @@ export default {
             message : '',
             repsonse: null,
             errors : false,
-            apiUrl : 'http://127.0.0.1:8000/api/bookingMessage',
+            apiUrl : 'http://127.0.0.1:8000/api/bookingMessage'
         }
     },
     methods: {
