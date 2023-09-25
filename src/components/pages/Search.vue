@@ -57,7 +57,6 @@ export default {
       return {
 
           store,
-          hunters:[],
           apiUrl:'http://127.0.0.1:8000/api/hunters',
           // searchText : '',
           nextPageUrl : '',
@@ -78,8 +77,8 @@ export default {
           axios.get(apiUrl, {params})
           .then((response)=>{
               // console.log(response.data.results.data);
-              this.hunters= response.data.results.data;
-              console.log(this.hunters);
+              this.store.huntersList= response.data.results.data;
+              console.log(this.store.huntersList);
               this.nextPageUrl = response.data.results.next_page_url;
               this.prevPageUrl = response.data.results.prev_page_url;
           })

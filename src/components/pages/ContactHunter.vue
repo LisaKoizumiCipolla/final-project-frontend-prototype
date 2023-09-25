@@ -68,6 +68,7 @@ export default {
                 this.response = false;
                 this.errors = error.response.data.message;
                 console.log(this.response);
+                    this.clearForm();
             });
         },
 
