@@ -1,25 +1,39 @@
 <template>
-    <div class="card">
+  <div class="bg-white d-block">
+      <h1 class="text-black p-1">
+        You Selected: 
+        {{store.searchValue}}
+        
+      </h1>
+    </div>
+    <div class="card" v-for="singlehunter in store.huntersList">
         <div class="card-image">
-            <img v-if="hunter.image.startsWith('http')" :src="hunter.image" alt="">
-            <img v-else :src="'http://127.0.0.1:8000/storage/' + hunter.image" alt="">
+            <img v-if="singlehunter.image.startsWith('http')" :src="singlehunter.image" alt="">
+            <img v-else :src="'http://127.0.0.1:8000/storage/' + singlehunter.image" alt="">
         </div>
         <div class="card-text">
-            <router-link   :to="{name: 'Show', params: {id:hunter.user_id}}">
-                <p class="card-meal-type">{{ hunter.surname }}</p>
-                <h2 class="card-title">{{ hunter.name }}</h2>
-                <p v-for="specialization in hunter.specializations">
-                  {{ specialization.name }}
-                </p>
+            <router-link   :to="{name: 'Show', params: {id:singlehunter.user_id}}">
+                <p class="card-meal-type">{{ singlehunter.surname }}</p>
+                <h2 class="card-title">{{ singlehunter.name }}</h2>
+                
             </router-link>
         </div>
     </div>
+    
+    
+    
 </template>
 <script>
+import {store} from '../../store.js';
 export default {
     name:'SingleHunter',
-    props:{
-        'hunter' : Object
+    props: {
+      'hunter' : Object,
+    },
+    data(){
+      return{
+        store,
+      }
     }
 }
 </script>
