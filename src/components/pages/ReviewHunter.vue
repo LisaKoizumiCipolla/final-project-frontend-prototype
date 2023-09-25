@@ -1,23 +1,26 @@
 <template>
-                    <form class="review" action="" method="post"  enctype="multipart/form-data">
+                    <form @submit.prevent="sendReviewHunter" @reset.prevent="clearForm" class="review" action="">        
+                        <div class="mb-3 hidden">
+                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="" v-model="hunter.user_id">
+                        </div>
                         <div class="col-md-4">
                             <label for="inputState" class="form-label">Vote</label>
-                            <select  id="inputState" v-model="vote"  class="form-select" name="vote" value="">
+                            <select  id="inputState" v-model="vote"  class="form-select" name="vote">
                             <option selected>Choose...</option>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
                             </select>
                         </div>
                         <div class="col">
                             <label for="name" class="form-label">Name</label>
-                            <input type="text"  v-model="name"  class="form-control" id="name" placeholder="First name" name="name" value="">
+                            <input type="text"  v-model="name"  class="form-control" id="name" placeholder="First name" name="name">
                         </div>
                         <div class="col">
                             <label for="surname" class="form-label">Surname</label>
-                            <input type="text"  v-model="surname"  class="form-control" id="surname" placeholder="Last name"  name="surname" value="">
+                            <input type="text"  v-model="surname"  class="form-control" id="surname" placeholder="Last name"  name="surname">
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlTextarea1" class="form-label">Review</label>
@@ -36,30 +39,37 @@
                     </form>
 </template>
 <script>
+import axios from 'axios';
 export default {
     name: 'ReviewHunter',
+    props: {
+      hunter : Object
+    },
     data() {
         return {
-            
-            'name' : '',
-            'surname' : '',
-            'review' : '',
+            user_id: '',
+            vote : '',
+            name : '',
+            surname : '',
+            review : '',
             repsonse: null,
             errors : false,
-            apiUrl : ''
+            apiUrl : 'http://127.0.0.1:8000/api/reviews'
         }
     },
     methods: {
-        sendContactHunter(){
+        sendReviewHunter(){
             console.log('contact form send starting...');
             axios.post(this.apiUrl, {
+                    user_id: this.hunter.user_id,
+                    vote: this.vote,
                     name: this.name,
                     surname: this.surname,
                     review: this.review,
             })
             .then((response) => {
                 this.response = response.data.success;
-                console.log(this.name, this.surname, this.review );
+                console.log(this.user_id, this.vote, this.name, this.surname, this.review );
                 console.log(response);
                 if (this.response ){
                     // ? una serie di operazioni
@@ -79,6 +89,8 @@ export default {
         },
 
         clearForm(){
+            this.hunter.user_id = '';
+            this.vote = '';
             this.name = '';
             this.surname = '';
             this.review = '';
@@ -102,6 +114,9 @@ export default {
         }
     }
 
+    .hidden{
+  display: none;
+}
 .btn {
     margin-top: 17px;
   width: 200px;
@@ -169,3 +184,4 @@ export default {
 
  
 </style>
+

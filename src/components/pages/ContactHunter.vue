@@ -1,6 +1,9 @@
 <template>
 
-    <form @submit.prevent="sendContactHunter" @reset.prevent="clearForm" class="message" action="" method="post"  enctype="multipart/form-data">
+    <form @submit.prevent="sendContactHunter" @reset.prevent="clearForm" class="message">        
+        <div class="mb-3 hidden">
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="" v-model="hunter.user_id">
+        </div>
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Email address</label>
             <input type="email" v-model="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
@@ -25,9 +28,13 @@
 import axios from 'axios';
 export default {
     name: 'ContactHunter',
+    props:{
+      hunter : Object
+    },
 
     data() {
         return {
+            user_id: '',
             email: '',
             message : '',
             repsonse: null,
@@ -39,12 +46,13 @@ export default {
         sendContactHunter(){
             console.log('contact form send starting...');
             axios.post(this.apiUrl, {
+                    user_id: this.hunter.user_id,
                     email: this.email,
                     message: this.message,
             })
             .then((response) => {
                 this.response = response.data.success;
-                console.log(this.email, this.message);
+                console.log(this.user_id, this.email, this.message);
                 console.log(response);
                 if (this.response ){
                     // ? una serie di operazioni
@@ -64,6 +72,7 @@ export default {
         },
 
         clearForm(){
+            this.hunter.user_id = '';
             this.email = '';
             this.message = '';
         }
@@ -76,6 +85,10 @@ export default {
 <style lang="scss" scoped>
 @use '../../styles/partials/variables.scss' as *;
 
+
+.hidden{
+  display: none;
+}
     .message{
         
         padding: 30px 40px 50px;
@@ -85,6 +98,7 @@ export default {
             padding-top: 10px;
         }
     }
+
 
 .btn {
     margin-top: 17px;

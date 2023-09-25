@@ -27,8 +27,8 @@
                     </div>
                 </div>
                 <div class="contact-hunter col-4">
-                    <ContactHunter />
-                   <!-- <ReviewHunter/> -->
+                    <ContactHunter :hunter="hunter" />
+                   <ReviewHunter :hunter="hunter" />
                 </div>
             </div>
         </div>
@@ -38,13 +38,13 @@
 <script>
 import axios from 'axios';
 import ContactHunter from './ContactHunter.vue'
-//import ReviewHunter from './ReviewHunter.vue'
+import ReviewHunter from './ReviewHunter.vue'
 
 export default {
     name: 'Show',
     components: {
         ContactHunter,
-  //      ReviewHunter
+   ReviewHunter
     },
     data() {
         return {
