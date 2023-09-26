@@ -1,10 +1,25 @@
 <template>
-  <div class="bg-white d-block">
-      <h1 class="text-black p-1">
+  <div class="container p-5 p-md-0">
+    <div class="row justify-content-around px-md-2">
+      <h1 class="title-selection">
         You Selected: 
         {{store.searchValue}}
-        
       </h1>
+      <div class="card-style col-12 col-md-3 me-3" v-for="singlehunter in store.huntersList">
+          <div class="card-img">
+            <div class="image-overlay"></div>
+            <img v-if="singlehunter.image.startsWith('http')" :src="singlehunter.image" alt="">
+            <img v-else :src="'http://127.0.0.1:8000/storage/' + singlehunter.image" alt="">
+          </div>
+                <div class="card-info">
+                  <router-link class="text-decoration-none" :to="{name: 'Show', params: {id:singlehunter.user_id}}">
+                    <p class="title">{{ singlehunter.surname }}</p>
+                    <p class="subtitle">{{ singlehunter.name }}</p>
+                  </router-link>
+          </div>
+      </div>
+    </div>
+  </div>
     </div>
     
       <div class="card" v-for="singlehunter in store.huntersList">
@@ -39,78 +54,90 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-    
-.card{
-  position: relative;
-  background-color: #f2f2f2;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  perspective: 1000px;
-  box-shadow: 0 0 0 5px #ffffff80;
-  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  flex-direction:column;
-  width:400px;
-  margin-bottom:60px;
 
-  &:hover{
-    cursor: pointer;
+@use '../../styles/partials/variables.scss' as *;
+    
+.card-style {
+  height: 340px;
+  width: 300px;
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  line-height: 150%;
+  transition: box-shadow .3s ease-in-out;
+  margin-bottom: 2rem;
+}
+
+.card-info {
+  position: absolute;
+  bottom: 1em;
+  width: 100%;
+  text-align: center;
+  z-index: 1;
+  font-family: 'Cinzel Decorative';
+  transition: transform .3s ease-in-out;
+
+  p{
+    color: $text;
   }
 }
-.card>div{
-  box-shadow:0 15px 20px 0 rgba(0,0,0,0.5);
-}
-.card-image{
-  width:400px;
-  height:250px;
-}
-.card-image>img{
-  width:100%;
-  //height:100%;
-  object-fit:cover;
-  object-position:center;
-}
-.card-text{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  padding: 20px;
-  box-sizing: border-box;
-  background-color: #2b2a33;
-  color: #f2f2f2;
-  transform: rotateX(-90deg);
-  transform-origin: bottom;
-  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+/* Image */
+.card-img {
+  position: relative;
+
+  img{
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+  }
 }
 
-.card:hover .card-text {
-  transform: rotateX(0deg);
+/* Buttons */
+
+/* Texts */
+.title {
+  font-size: 1.5em;
+  font-weight: bold;
 }
-.card-meal-type{
-  font-style:italic;
+
+.subtitle {
+  letter-spacing: 1px;
+  font-size: 0.9em;
 }
-.card-title{
-  font-size:2.2rem;
-  margin-bottom:20px;
-  margin-top:5px;
+
+
+/* Hovers */
+.card-style:hover {
+  box-shadow: 0px 15px 30px rgba(80, 80, 80, 0.4);
 }
-.card-body{
-  font-size:1.25rem;
+
+.card-style:hover .card-info {
+  transform: translateY(-5em);
 }
-.card-alcoholic{
-  width:100px;
-  height:100px;
-  background-color:salmon;
-  color:#fff;
-  margin-left:auto;
-  font-size:1rem;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  position: relative;
+
+.title-selection{
+  font-family: 'Cinzel Decorative';
+  font-weight: 600;
+  font-size: 2rem;
+  text-align: center;
+  color: $secondary;
+  margin-bottom: 3rem;
 }
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9); /* Colore di sfondo opaco (qui 0.5 indica un'opacità del 50%) */
+    opacity: 0; /* Inizialmente trasparente */
+    transition: opacity 0.3s ease-in-out; /* Aggiungi una transizione */
+
+    &:hover .image-overlay {
+    opacity: 1;
+  }
+  }
+
 </style>
