@@ -1,6 +1,14 @@
 <template>
 
-    <form @submit.prevent="sendContactHunter" @reset.prevent="clearForm" class="message">        
+    <form @submit.prevent="sendContactHunter" @reset.prevent="clearForm" class="message">
+      
+      <div class="form-element info" v-if="response === false">
+            <h3>
+                There are errors in your form:
+                {{ errors }}
+            </h3>
+        </div>
+
         <div class="mb-3 hidden">
             <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="" v-model="hunter.user_id">
         </div>
@@ -66,6 +74,7 @@ export default {
             .catch((error) => {
                 console.log(error);
                 this.response = false;
+                this.message = '';
                 this.errors = error.response.data.message;
                 console.log(this.response);
                     this.clearForm();
