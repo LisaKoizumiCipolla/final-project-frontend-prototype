@@ -67,14 +67,15 @@
 <select class="mb-4" name="" id="" v-model="review">
   <option value="" disable selected>Reviews</option>
 
+  <option value="1">1</option>
+  <option value="3">3</option>
   <option value="5">5</option>
-  <option value="10">10</option>
-  <option value="15">15</option>
-  <option value="20">20</option>
+  <option value="7">7</option>
 
   
 
 </select>
+
 <button @click="advancedHuntersFilter(vote, review)">Apply Filter</button>
 </section>
 
@@ -144,7 +145,7 @@ export default {
 
       advancedHuntersFilter(vote, review) {
         const searchValue = this.store.searchValue;
-  axios.get(`http://127.0.0.1:8000/api/filter?=${searchValue}`,{
+  axios.get(`http://127.0.0.1:8000/api/filter?specialization=${searchValue}`,{
     params: {
       min_average: vote,
       min_review: review
