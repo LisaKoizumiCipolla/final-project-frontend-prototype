@@ -20,22 +20,9 @@
       </div>
     </div>
   </div>
-    </div>
     
-      <div class="card" v-for="singlehunter in store.huntersList">
-        <router-link   :to="{name: 'Show', params: {id:singlehunter.user_id}}">
-          <div class="card-image">
-              <img v-if="singlehunter.image.startsWith('http')" :src="singlehunter.image" alt="">
-              <img v-else :src="'http://127.0.0.1:8000/storage/' + singlehunter.image" alt="">
-          </div>
-          <div class="card-text">
-                  <p class="card-meal-type">{{ singlehunter.surname }}</p>
-                  <h2 class="card-title">{{ singlehunter.name }}</h2>
-                  
-          </div>
-        </router-link>
-      </div>
     
+      
     
     
 </template>

@@ -7,6 +7,12 @@ export const store = reactive({
     specializationsList:[],
 
     searchValue:'',
+
+    updateHuntersList(newList) {
+        this.huntersList = newList;
+    },
+
+   
     
     
 })
