@@ -1,6 +1,7 @@
 <template>
-  <section class="background_details">
+  <section class="background_details d-flex flex-row-reverse">
     <div class="container p-3">
+      <!--
       <div class="serch_bar_container">
         <div class="search-bar">
             <input type="text" name="text" id="searchText" class="navbar" v-model="searchText" @keyup.enter="newSearch(searchText)">
@@ -12,6 +13,7 @@
             </button>
       </div>
       </div>
+      -->
       
       <div class="my_section_hunters container border-1 rounded-4">
         
@@ -34,11 +36,53 @@
       </nav>
         <SingleHunter/>
       </div>
+
+      
+      
       
   </div>
 
+  <section class="filter pt-5 ps-3 pe-3 d-flex me-2 h-50">
+
+    <select class="select-style" name="type-select" id="type-select" v-model="selectedSpecialization">
+            <option value="" disable selected>{{ store.searchValue }}</option>
+                    <option class="option-style" v-for="specialization in specializations">
+                         {{ specialization.name }}
+                    </option>
+          </select>
+
+ 
+
+<select class="mb-5" name="" id="" v-model="vote">
+  <option value="" disable selected>Vote</option>
+
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+
+</select>
+
+<select class="mb-4" name="" id="" v-model="review">
+  <option value="" disable selected>Reviews</option>
+
+  <option value="1">1</option>
+  <option value="3">3</option>
+  <option value="5">5</option>
+  <option value="7">7</option>
+
+  
+
+</select>
+
+<button @click="advancedHuntersFilter(vote, review)">Apply Filter</button>
+</section>
+
+
 
   </section>  
+
   
 </template>
 <script>
@@ -57,55 +101,71 @@ export default {
       return {
 
           store,
-          apiUrl:'http://127.0.0.1:8000/api/hunters',
+
+          vote:'',
+          review:'',
+          selectedSpecialization:'',
+          filter:[],
+
+          apiUrl:'http://127.0.0.1:8000/api/filter',
           // searchText : '',
           nextPageUrl : '',
           currentPageNo: '',
+          specializations:[],
           prevPageUrl : '',
+          advancedfilteredhunter:[],
+          demons:'Demons',
           
       }
   },
 
+        //$specialization = $request->input('specialization');
+        //$minReview = $request->input('min_review');
+        //$minAverage = $request->input('min_average');
+        //http://127.0.0.1:8000/api/filter?=Demons?&min_review=1
+        //http://127.0.0.1:8000/api/filter?=Demons?&min_average=4&min_review=5
+
   methods: {
-      getHunters(apiUrl = this.apiUrl, nameQuery = false){
-          const params = { }
-          if(nameQuery){
-              params.search = nameQuery;
-          }
-          
-          
-          axios.get(apiUrl, {params})
-          .then((response)=>{
-              // console.log(response.data.results.data);
-              this.store.huntersList= response.data.results.data;
-              console.log(this.store.huntersList);
-              this.nextPageUrl = response.data.results.next_page_url;
-              this.prevPageUrl = response.data.results.prev_page_url;
+
+    getSpecializations() {
+        axios.get('http://127.0.0.1:8000/api/specializations')
+          .then((response) => {
+            // handle success
+            this.specializations = response.data.results;
+            console.log(this.specializations);
           })
           .catch(function (error) {
-              console.log(error);
-          })
+            // handle error
+            console.log(error);
+          });
       },
+    
+  
+    
 
+      advancedHuntersFilter(vote, review) {
+        const searchValue = this.store.searchValue;
+  axios.get(`http://127.0.0.1:8000/api/filter?specialization=${searchValue}`,{
+    params: {
+      min_average: vote,
+      min_review: review
+    }
+  })
+  .then((response) => {
+    this.filter = response.data.results;
+    this.advancedfilteredhunter = vote.toString() + review.toString();
 
-      // getHunters(filter){
-      //       axios.get(this.apiUrl, {
-      //           params: {
-      //               num: 20,
-      //               offset: 0,
-      //               specialization : filter
-      //           }
-      //       })
-      //           .then( (response) => {
-      //               // handle success
-      //               this.hunters = response.data.results;
-      //               console.log(this.hunters);
-      //           })
-      //           .catch(function (error) {
-      //               // handle error
-      //               console.log(error);
-      //           });
-      //   },
+  this.store.updateHuntersList(this.filter);
+
+    console.log(this.filter);
+    console.log(this.advancedfilteredhunter);
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+}
+    
+      },
         
 
       nextPage(){
@@ -120,17 +180,18 @@ export default {
 
       newSearch(nameToSearch){
               this.getHunters(this.apiUrl, nameToSearch);
-      }
+      },
 
-
-  },
-
-  created() {
-      this.getHunters(this.apiUrl);
+      created() {
+      this.getSpecializations();
       
-  },
 
-}
+    },
+   
+  }
+  
+  
+
 </script>
 <style lang="scss" scoped>
 

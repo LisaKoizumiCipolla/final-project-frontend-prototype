@@ -8,7 +8,9 @@
       <div class="card-style col-12 col-md-3 me-3" v-for="singlehunter in store.huntersList">
         <router-link class="text-decoration-none" :to="{name: 'Show', params: {id:singlehunter.user_id}}">
           <div class="card-img">
-            <div class="image-overlay"></div>
+            <div class="image-overlay">
+
+            </div>
             <img v-if="singlehunter.image.startsWith('http')" :src="singlehunter.image" alt="">
             <img v-else :src="'http://127.0.0.1:8000/storage/' + singlehunter.image" alt="">
             </div>
@@ -21,8 +23,8 @@
     </div>
   </div>
 
-
     
+      
     
     
 </template>
