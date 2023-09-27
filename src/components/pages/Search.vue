@@ -76,7 +76,7 @@
 
 </select>
 
-<button @click="advancedHuntersFilter(vote, review)">Apply Filter</button>
+<button @click="advancedHuntersFilter(selectedSpecialization,vote, review)">Apply Filter</button>
 </section>
 
 
@@ -88,7 +88,7 @@
 <script>
 import axios from 'axios';
 import {store} from '../../store.js';
-import SingleHunter from '../pages/SingleHunter.vue';
+import SingleHunter from '../pages/singlehunter.vue';
 
 export default {
   name: 'Search',
@@ -143,9 +143,9 @@ export default {
   
     
 
-      advancedHuntersFilter(vote, review) {
-        const searchValue = this.store.searchValue;
-  axios.get(`http://127.0.0.1:8000/api/filter?specialization=${searchValue}`,{
+      advancedHuntersFilter(selectedSpecialization,vote, review) {
+        // const searchValue = this.store.searchValue;
+  axios.get(`http://127.0.0.1:8000/api/filter?specialization=${selectedSpecialization}`,{
     params: {
       min_average: vote,
       min_review: review
