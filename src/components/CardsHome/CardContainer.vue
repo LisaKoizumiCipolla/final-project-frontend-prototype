@@ -1,5 +1,5 @@
 <template>
-    <div class="wrapper d-flex flex-wrap">
+    <div class="wrapper row mx-auto">
         <SingleCard v-for="hunter in hunters" 
         :thumb="hunter.thumb"
         :name="hunter.name"

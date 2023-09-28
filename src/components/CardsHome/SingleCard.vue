@@ -1,5 +1,5 @@
 <template>
-    <div class="single-card">
+    <div class="single-card p-0 col-12 col-md-3">
         <img :src="thumb" alt="">
         <div class="text">
             <h2>
@@ -26,7 +26,7 @@ export default {
 @use '../../styles/partials/variables.scss' as *;
 
     .single-card{
-        width: calc( (100% / 3) - 25px);
+        // width: calc( (100% / 3) - 25px);
         //
         background-color: $text;
         margin-bottom: 20px;
