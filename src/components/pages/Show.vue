@@ -32,26 +32,24 @@
                             <div class="col">
                                 <div class="collapse multi-collapse show" id="multiCollapseExample1">
                                 <div class="card card-body">
-                                    <ReviewHunter :hunter="hunter" />
+                                    <!--<ReviewHunter :hunter="hunter" />-->
                                 </div>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="collapse multi-collapse" id="multiCollapseExample2">
                                 <div class="card card-body">
-                                    <ContactHunter :hunter="hunter" />
+                                    <!--<ContactHunter :hunter="hunter" />-->
                                 </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!--
                 <div class="contact-hunter col-4">
                     <ContactHunter :hunter="hunter" />
                     <ReviewHunter :hunter="hunter" />
                 </div>
-                -->
             </div>
         </div>
     </div>
