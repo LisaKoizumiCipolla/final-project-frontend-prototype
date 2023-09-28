@@ -1,5 +1,11 @@
 <template>
-                    <form @submit.prevent="sendReviewHunter" @reset.prevent="clearForm" class="review" action="">        
+                    <form @submit.prevent="sendReviewHunter" @reset.prevent="clearForm" class="review" action="">
+                      
+                      <div class="form-element info" v-if="response === true">
+                        <h3>
+                          Your message has been sent successfully!
+                        </h3>
+                      </div>        
                         <div class="mb-3 hidden">
                             <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="" v-model="hunter.user_id">
                         </div>

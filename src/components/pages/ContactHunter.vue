@@ -108,6 +108,10 @@ export default {
         }
     }
 
+    a{
+    text-decoration: none;
+    color: $background;
+  }
 
 .btn {
     margin-top: 17px;
