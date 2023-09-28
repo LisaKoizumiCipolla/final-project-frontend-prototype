@@ -1,6 +1,6 @@
 <template>
     <div class="wrapper d-flex flex-wrap">
-        <SingleCard v-for="hunter in sponsoredHunters" 
+        <SingleCard class="card" v-for="hunter in sponsoredHunters" 
         :image="hunter.image"
         :name="hunter.name"
         :surname="hunter.surname"
@@ -50,5 +50,8 @@ export default {
         height: 100%;
         width: 100%;
         justify-content: center;
+    }
+    .card{
+        min-width: 350px;
     }
 </style>

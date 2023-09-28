@@ -194,6 +194,8 @@ export default {
   .sponsored{
     width: 80%;
     margin-bottom: 55px;
+    display: flex;
+    flex-wrap: wrap;
   }
 
   .btn {

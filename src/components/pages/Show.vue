@@ -24,12 +24,34 @@
                     <div class="content">
                         <h2>Services </h2>
                         <p class="text-description"> {{ hunter.services }} </p>
+                        <p class="d-inline-flex gap-1">
+                            <a class="btn btn-primary" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Leave a review</a>
+                            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="true" aria-controls="multiCollapseExample1 multiCollapseExample2">Contact</button>
+                        </p>
+                        <div class="row">
+                            <div class="col">
+                                <div class="collapse multi-collapse show" id="multiCollapseExample1">
+                                <div class="card card-body">
+                                    <ReviewHunter :hunter="hunter" />
+                                </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="collapse multi-collapse" id="multiCollapseExample2">
+                                <div class="card card-body">
+                                    <ContactHunter :hunter="hunter" />
+                                </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <!--
                 <div class="contact-hunter col-4">
                     <ContactHunter :hunter="hunter" />
-                   <ReviewHunter :hunter="hunter" />
+                    <ReviewHunter :hunter="hunter" />
                 </div>
+                -->
             </div>
         </div>
     </div>
@@ -73,16 +95,19 @@ export default {
 @use '../../styles/partials/variables.scss' as *;
 
 .background-page{
-    background-color: $background;
+    background-color:$background;
     width: 100%;
-    margin: 0 auto;
+    margin-top: 100px;
+    padding: 100px 0;
 }
 
 .container{
     width: 100%;
-
     .hunter{
-        width: 100%
+        width: 100%;
+        background: $secondary;
+        border-radius: 50px;
+        padding: 50px;
     }
 }
 .card-hunter{
@@ -150,7 +175,7 @@ export default {
 
 .contact-hunter{
     background-color: $text;
-    border-left: 10px solid $background;
+    border-left: 10px solid $secondary;
     font-family: 'Raleway', sans-serif;
     font-weight: 600;
     padding: 0;

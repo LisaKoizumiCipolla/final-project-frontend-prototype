@@ -6,14 +6,14 @@
                 {{ name }} {{ surname }}
             </h2>
             <h3>
-               SPECIALIZATION: {{ specialization }}
+               SPECIALIZATION: {{ specialization }} {{ reviews }}
             </h3>
         </div>
     </div>
 </template>
 <script>
 export default {
-    name: 'SingeCard',
+    name: 'SingleCard',
     props:{
         image: String,
         name: String,
