@@ -2,10 +2,9 @@
 
     <form @submit.prevent="sendContactHunter" @reset.prevent="clearForm" class="message">
       
-      <div class="form-element info" v-if="response === false">
+        <div class="form-element info" v-if="response === true">
             <h3>
-                There are errors in your form:
-                {{ errors }}
+              Your message has been sent successfully!
             </h3>
         </div>
 
