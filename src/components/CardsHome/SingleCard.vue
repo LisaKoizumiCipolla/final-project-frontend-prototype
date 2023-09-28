@@ -6,7 +6,7 @@
                 {{ name }} {{ surname }}
             </h2>
             <h3>
-               SPECIALIZATION: {{ specialization }}
+               SPECIALIZATION: {{ specialization }} {{ reviews }}
             </h3>
             <span class="badge rounded-pill text-bg-warning">Best Hunters</span>
         </div>
