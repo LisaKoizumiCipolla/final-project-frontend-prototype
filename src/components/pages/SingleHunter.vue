@@ -1,10 +1,6 @@
 <template>
   <div class="container p-5 p-md-0">
     <div class="row justify-content-around px-md-2">
-      <h1 class="title-selection">
-        You Selected: 
-        {{store.searchValue}}
-      </h1>
       <div class="card-style col-12 col-md-3 me-3" v-for="singlehunter in store.huntersList">
         <router-link class="text-decoration-none" :to="{name: 'Show', params: {id:singlehunter.user_id}}">
           <div class="card-img">
