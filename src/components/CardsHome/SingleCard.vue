@@ -1,6 +1,6 @@
 <template>
     <div class="single-card">
-        <img :src="thumb" alt="">
+        <img :src="image" alt="">
         <div class="text">
             <h2>
                 {{ name }} {{ surname }}
@@ -15,7 +15,7 @@
 export default {
     name: 'SingeCard',
     props:{
-        thumb: String,
+        image: String,
         name: String,
         surname: String,
         specialization: String
