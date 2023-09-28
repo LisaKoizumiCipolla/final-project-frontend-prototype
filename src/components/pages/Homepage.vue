@@ -121,10 +121,12 @@ export default {
         }
       })
       .then((response) => {
-        this.store.huntersList = response.data.results.data;
+        this.store.huntersList = response.data.results;
+        this.store.sponsor = response.data.results;
         this.store.searchValue = search;
         console.log(this.store.searchValue);
         console.log(this.store.huntersList);
+        console.log(this.store.sponsor);
       })
       .catch((error) => {
         console.error(error);
