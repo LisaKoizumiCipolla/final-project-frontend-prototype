@@ -8,6 +8,8 @@ export const store = reactive({
 
     searchValue:'',
 
+    sponsor:[],
+
     updateHuntersList(newList) {
         this.huntersList = newList;
     },
