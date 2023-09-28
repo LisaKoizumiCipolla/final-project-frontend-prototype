@@ -289,7 +289,7 @@ export default {
 
 
 .background_details{
-  background-color: $secondary;
+  background-image: url(../../assets/hunter.bg.jpg);
   padding-top: 6rem;
 }
 
