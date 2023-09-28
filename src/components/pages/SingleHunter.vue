@@ -13,7 +13,12 @@
                 <div class="card-info">
                     <p class="title">{{ singlehunter.surname }}</p>
                     <p class="subtitle">{{ singlehunter.name }}</p>
+                    <div v-for="huntersponsor in singlehunter.sponsorships" class="sponsor">
+                      <span class="badge rounded-pill text-bg-warning">{{ huntersponsor.name }}</span>
+                        
+                    </div>
                 </div>
+                
           </router-link>
       </div>
     </div>
@@ -34,6 +39,7 @@ export default {
     data(){
       return{
         store,
+
       }
     }
 }
