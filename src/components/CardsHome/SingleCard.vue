@@ -1,21 +1,22 @@
 <template>
     <div class="single-card">
-        <img :src="thumb" alt="">
+        <img :src="image" alt="">
         <div class="text">
             <h2>
                 {{ name }} {{ surname }}
             </h2>
             <h3>
-               SPECIALIZATION: {{ specialization }}
+               SPECIALIZATION: {{ specialization }} {{ reviews }}
             </h3>
+            <span class="badge rounded-pill text-bg-warning">Best Hunters</span>
         </div>
     </div>
 </template>
 <script>
 export default {
-    name: 'SingeCard',
+    name: 'SingleCard',
     props:{
-        thumb: String,
+        image: String,
         name: String,
         surname: String,
         specialization: String
