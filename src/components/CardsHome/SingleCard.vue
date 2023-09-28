@@ -13,7 +13,7 @@
 </template>
 <script>
 export default {
-    name: 'SingeCard',
+    name: 'SingleCard',
     props:{
         image: String,
         name: String,
