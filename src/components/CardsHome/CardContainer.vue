@@ -1,5 +1,5 @@
 <template>
-    <div class="wrapper d-flex flex-wrap">
+    <div class="wrapper row">
         <SingleCard v-for="hunter in sponsoredHunters" 
         :image="hunter.image"
         :name="hunter.name"
@@ -36,7 +36,7 @@ export default {
       .catch((error) => {
         console.error(error);
       });
-    }
+    },
 
     },
     created(){

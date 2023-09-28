@@ -1,6 +1,6 @@
 <template>
-    <div class="single-card">
-        <img :src="image" alt="">
+    <div class="single-card col-12 col-md-4 p-0">
+        <img :src="image" :alt='name'>
         <div class="text">
             <h2>
                 {{ name }} {{ surname }}
@@ -8,6 +8,7 @@
             <h3>
                SPECIALIZATION: {{ specialization }}
             </h3>
+            <span class="badge rounded-pill text-bg-warning">Best Hunters</span>
         </div>
     </div>
 </template>
@@ -26,11 +27,8 @@ export default {
 @use '../../styles/partials/variables.scss' as *;
 
     .single-card{
-        width: calc( (100% / 3) - 25px);
-        //
         background-color: $text;
         margin-bottom: 20px;
-        margin-right: 15px;
 
         &:hover{
             cursor: pointer;
