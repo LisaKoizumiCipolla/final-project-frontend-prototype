@@ -1,6 +1,7 @@
 <template>
     <div class="wrapper d-flex flex-wrap">
         <SingleCard class="card" v-for="hunter in sponsoredHunters" 
+        :user_id="hunter.user_id"
         :image="hunter.image"
         :name="hunter.name"
         :surname="hunter.surname"

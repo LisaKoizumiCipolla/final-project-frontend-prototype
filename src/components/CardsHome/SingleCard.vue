@@ -1,15 +1,19 @@
 <template>
     <div class="single-card">
-        <img :src="image" alt="">
-        <div class="text">
-            <h2>
-                {{ name }} {{ surname }}
-            </h2>
-            <h3>
-               SPECIALIZATION: {{ specialization }} {{ reviews }}
-            </h3>
-            <span class="badge rounded-pill text-bg-warning">Best Hunters</span>
-        </div>
+        
+        <router-link class="text-decoration-none" id="color-text" :to="{name: 'Show', params: {id:user_id}}">       
+            <img :src="image" alt="">
+            <div class="text">
+                <h2>
+                    {{ name }} {{ surname }}
+                </h2>
+                <h3>
+                   SPECIALIZATION: {{ specialization }} {{ reviews }}
+                </h3>
+                <span class="badge rounded-pill text-bg-warning">Best Hunters</span>
+            </div>
+        </router-link>
+
     </div>
 </template>
 <script>
@@ -19,12 +23,17 @@ export default {
         image: String,
         name: String,
         surname: String,
-        specialization: String
+        specialization: String,
+        user_id:String,
     },
 }
 </script>
 <style lang="scss" scoped>
 @use '../../styles/partials/variables.scss' as *;
+
+#color-text{
+    color: $background;
+}
 
     .single-card{
         width: calc( (100% / 3) - 25px);
