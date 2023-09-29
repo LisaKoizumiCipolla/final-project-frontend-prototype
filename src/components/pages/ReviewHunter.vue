@@ -1,18 +1,22 @@
 <template>
                     <form @submit.prevent="sendReviewHunter" @reset.prevent="clearForm" class="review" action="">
                       
-                      <div class="form-element info" v-if="response === true">
+                      <div class="form-element infoalert alert-primary" role="alert" v-if="response === true">
                         <h3>
                           Your message has been sent successfully!
                         </h3>
-                      </div>        
+                      </div>                              
+                      <div class="form-element infoalert alert-danger" role="alert" v-if="response === true">
+                        <h3>
+                          {{error}}
+                        </h3>
+                      </div>   
                         <div class="mb-3 hidden">
                             <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="" v-model="hunter.user_id">
                         </div>
                         <div class="col-md-4">
                             <label for="inputState" class="form-label">Vote</label>
                             <select  id="inputState" v-model="vote"  class="form-select" name="vote">
-                            <option selected>Choose...</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>

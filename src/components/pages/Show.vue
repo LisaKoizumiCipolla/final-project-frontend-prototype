@@ -24,12 +24,12 @@
                     <div class="content">
                         <p class="d-inline-flex gap-1">
                             
-                            <button class="btn " type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="true" aria-controls="multiCollapseExample1 multiCollapseExample2">Services</button>
-                            <a class="btn " data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Leave a review</a>
+                            <button class="btn " type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="true" aria-controls="multiCollapseExample1">Services</button>
+                            <a class="btn " data-bs-toggle="collapse" href="#multiCollapseExample2" role="button" aria-expanded="false" aria-controls="multiCollapseExample2">Leave a review</a>
                         </p>
                         <div class="row">
                             <div class="col-12">
-                                <div class="collapse multi-collapse" id="multiCollapseExample2">
+                                <div class="collapse multi-collapse" id="multiCollapseExample1">
                                     <div class="card card-body">
                                         <h2>Services </h2>
                                         <p class="text-description"> {{ hunter.services }} </p>
@@ -42,6 +42,11 @@
                                     <div class="div">
                                         <!--<ContactHunter :hunter="hunter" />-->
                                         <div class="card ">
+
+                                            <h3 class="pt-5">
+                                                Leave a Review
+                                            </h3>
+
                                             <ReviewHunter :hunter="hunter" />
                                         </div>
                                             <div class="card reviews-wrapper">
@@ -50,13 +55,14 @@
                                                 </h3>
                                                 <div class="reviews"  v-for="review in hunter.reviews">
                                                     <div>
-                                                        {{ review.name }} {{ review.surname }}
+                                                        Reviewer: {{ review.name }} {{ review.surname }}
                                                     </div>
                                                     <div>
-                                                        {{ review.vote }}
+                                                        Vote: {{ review.vote }}
                                                     </div>
                                                     <div>
-                                                        {{ review.review }}
+                                                        Review: 
+                                                        <p>{{ review.review }}</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -202,19 +208,23 @@ export default {
     padding: 0;
     height: 370px;
 }
-
-.reviews-wrapper{
-    margin-top: 10px;
-    padding: 30px;
-
-    h3{
+h3{
         text-align: center;
         font-weight: 600;
         font-family: 'Cinzel Decorative', cursive;
+        padding-bottom: 10px;
     }
+.reviews-wrapper{
+    margin-top: 10px;
+    padding: 30px 20px;
+
+
 
     .reviews{
-        padding: 10px;
+        margin: 10px;
+        padding: 15px 15px 0px;
+        border: 1px solid $text;
+        border-radius: 15px;
     }
 }
 .margin-row{
