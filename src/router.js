@@ -14,7 +14,7 @@ import Show from './components/pages/Show.vue';
 
 import About from './components/pages/About.vue';
 
-
+import Services from './components/pages/Services.vue'
 //import auth from "@/middleware/auth";
 
 // import Dashboard from './components/pages/Dashboard.vue';
@@ -60,6 +60,11 @@ const router= createRouter({
             path: '/about',
             name: 'About',
             component: About,
+        },
+        {
+            path: '/services',
+            name: 'Services',
+            component: Services,
         },
     ]
 
