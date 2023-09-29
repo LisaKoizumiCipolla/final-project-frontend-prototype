@@ -6,14 +6,14 @@
     <section class="container  filter">
     <!-- SELECT SPECIALIZATION -->
       <div class="row d-flex justify-content-around ">
-        <select class="select-style col-4 " name="type-select" id="type-select" v-model="selectedSpecialization">
+        <select class="select-style col-4 mb-4 " name="type-select" id="type-select" v-model="selectedSpecialization">
           <option :value='store.searchValue' active selected>You selected {{ store.searchValue }}</option>
           <option class="option-style" v-for="specialization in specializations" :value="specialization.name" >
               {{ specialization.name }}
           </option>
         </select>
           <!-- SELECT VOTE -->
-        <select class="mb-5 select-style col-3" name="" id="" v-model="vote">
+        <select class="mb-4 select-style col-3" name="" id="" v-model="vote">
           <option value="" disable selected>Vote</option>
           <option value="1">1</option>
           <option value="2">2</option>
