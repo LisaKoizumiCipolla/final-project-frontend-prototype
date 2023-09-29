@@ -164,7 +164,7 @@ export default {
 .serch_bar_container{
   background-color: $background;
   width: 50%;
-  border-radius: 2rem;
+  border-radius: 5px;
   padding: 0 1rem 0 1rem;
   margin-bottom: 0.7rem;
  
@@ -283,7 +283,7 @@ font-size:1.5rem;
 font-style:italic;
 }
 .navbar{
-border-radius: 10px;
+border-radius: 5px;
 margin-right: 1rem;
 width: 24rem;
 
@@ -383,7 +383,7 @@ position: relative;
 .select-style{
   background-color: $primary;
   border: none;
-  border-radius: 1rem;
+  border-radius: 5px;
   padding: 1rem;
   margin-bottom: 2rem;
   font-family: 'Cinzel Decorative';
