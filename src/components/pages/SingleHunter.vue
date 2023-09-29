@@ -2,7 +2,7 @@
   <div class="container p-5 p-md-0">
     <div class="row justify-content-around px-md-2">
       <div class="card-style col-12 col-md-3 me-3" v-for="singlehunter in store.huntersList">
-        <router-link class="text-decoration-none" :to="{name: 'Show', params: {id:singlehunter.user_id}}">
+        <router-link :to="{name: 'Show', params: {id:singlehunter.user_id}}">
           <div class="card-img">
             <div class="image-overlay">
 
@@ -10,13 +10,12 @@
             <img v-if="singlehunter.image.startsWith('http')" :src="singlehunter.image" alt="">
             <img v-else :src="'http://127.0.0.1:8000/storage/' + singlehunter.image" alt="">
             </div>
-                <div class="card-info">
-                    <p class="title">{{ singlehunter.surname }}</p>
-                    <p class="subtitle">{{ singlehunter.name }}</p>
-                    <div v-for="huntersponsor in singlehunter.sponsorships" class="sponsor">
-                      <span class="badge rounded-pill text-bg-warning">{{ huntersponsor.name }}</span>
-                        
-                    </div>
+                <div class="card-info my_bg-glass">
+                  <p class="title">{{ singlehunter.name }}</p>
+                  <p class="subtitle">{{ singlehunter.surname }}</p>
+                  <div v-for="huntersponsor in singlehunter.sponsorships" class="sponsor">
+                    <span class="badge rounded-pill text-bg-warning">{{ huntersponsor.name }}</span>                        
+                  </div>
                 </div>
                 
           </router-link>
@@ -49,14 +48,15 @@ export default {
 @use '../../styles/partials/variables.scss' as *;
     
 .card-style {
-  height: 340px;
+  height: 300px;
   width: 300px;
   position: relative;
   border-radius: 4px;
   overflow: hidden;
-  line-height: 150%;
+  line-height: 100%;
   transition: box-shadow .3s ease-in-out;
   margin-bottom: 2rem;
+  padding: 0;
 }
 
 .card-info {
@@ -67,10 +67,21 @@ export default {
   z-index: 1;
   font-family: 'Cinzel Decorative';
   transition: transform .3s ease-in-out;
+  padding-top: 1rem;
+  height: 80px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 
   p{
     color: $text;
   }
+}
+
+.my_bg-glass {
+  text-align: center;
+  backdrop-filter: blur(80px);
+  background-color: rgba(255, 255, 255, 0.099);
 }
 
 /* Image */
@@ -78,9 +89,11 @@ export default {
   position: relative;
 
   img{
-    max-width: 100%;
-    max-height: 100%;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
     display: block;
+    object-position: top;
   }
 }
 
