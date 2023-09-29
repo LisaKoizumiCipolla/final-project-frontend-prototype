@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <img src="../../assets/hunters tooth and talon_intero.png" class="logo" alt="">
+    <img src="../../assets/hunters tooth and talon_intero.png" class="logo" id="mobile-size" alt="">
     <div id="carouselExample" class="carousel slide">
     <div class="carousel-indicators">
        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -163,12 +163,12 @@ export default {
   .logo{
       height: calc(100vh - 100px);
       z-index: 1;
-      height: 500px;
+      height: 450px;
       filter: invert(0);
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%);
+      transform: translate(-50%, -40%);
       }
 
     img{
@@ -280,11 +280,12 @@ a{
   font-weight: 600;
   font-size: 1.3rem;
   text-align: center;
+  width: 350px;
 }
 
 
 @media screen and (max-width: 576px) {
-  .logo{
+  #mobile-size{
     height: 250px;
   }
 }
