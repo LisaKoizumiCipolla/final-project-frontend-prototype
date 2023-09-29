@@ -43,6 +43,11 @@
         <h1>
           Let the hunt begin!
         </h1>
+        <div class="row">
+          <div class="col-9 mx-auto text-sponsored px-4 px-0">
+            These are the best hunters according to our customers' reviews. Our dedication to excellence and passion for hunting have made us leaders in the industry.
+          </div>
+        </div>
 
         <div class="sponsored">
           <CardContainer />
@@ -158,6 +163,15 @@ export default {
 <style lang="scss" scoped>
 
 @use '../../styles/partials/variables.scss' as *;
+
+
+.text-sponsored{
+  color: $text;
+  font-family: 'Cinzel Decorative';
+  font-weight: 500;
+  font-size: 1.2rem;
+  text-align: center;
+}
 .wrapper{
     margin-top: 100px;
   .logo{
@@ -280,7 +294,7 @@ a{
   font-weight: 600;
   font-size: 1.3rem;
   text-align: center;
-  width: 350px;
+  width: 320px;
 }
 
 

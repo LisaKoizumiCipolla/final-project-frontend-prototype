@@ -1,14 +1,14 @@
 <template>
     <header class="fixed-top">
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top " id="mainNav">
-            <div class="container-fluid p-0 p-lg-4">
+            <div class="container-fluid p-0 p-lg-4 d-flex">
                     <a class="navbar-brand ps-4" href="/">
                         <img src="../assets/navbar-logo.png" alt="...">
                     </a>
                     <button class="navbar-toggler me-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse mt-3 bg-dark-mobile" id="navbarResponsive">
+                    <div class="collapse navbar-collapse justify-content-end  mt-3 mt-lg-0 bg-dark-mobile" id="navbarResponsive">
                         <div class="navbar-nav pt-md-0">
                             <a class="nav-link text-center hover-link" v-for="link in links" :key="link.name">
                                 <router-link v-if="link.name !== 'LOGIN' && link.name !== 'SIGNIN'" :to="link.route" class="nav-link">
