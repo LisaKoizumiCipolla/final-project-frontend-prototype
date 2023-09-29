@@ -2,7 +2,8 @@
     <div class="single-card">
         
         <router-link class="text-decoration-none" id="color-text" :to="{name: 'Show', params: {id:user_id}}">       
-            <img :src="image" alt="">
+            <img v-if="image.startsWith('http')" :src="image" alt="">
+                        <img v-else :src="'http://127.0.0.1:8000/storage/' + image" alt="">
             <div class="text">
                 <h2>
                     {{ name }} {{ surname }}
