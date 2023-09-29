@@ -113,7 +113,6 @@ export default {
         .review{
         
         padding: 30px 40px 50px;
-        border-bottom: 10px solid transparent;
 
         label{
             padding-top: 10px;

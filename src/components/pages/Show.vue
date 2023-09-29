@@ -22,36 +22,52 @@
                         </div>
                     </div>
                     <div class="content">
-                        <h2>Services </h2>
-                        <p class="text-description"> {{ hunter.services }} </p>
                         <p class="d-inline-flex gap-1">
-                            <a class="btn btn-primary" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Leave a review</a>
-                            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="true" aria-controls="multiCollapseExample1 multiCollapseExample2">Contact</button>
+                            
+                            <button class="btn " type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="true" aria-controls="multiCollapseExample1 multiCollapseExample2">Services</button>
+                            <a class="btn " data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Leave a review</a>
                         </p>
                         <div class="row">
-                            <div class="col">
-                                <div class="collapse multi-collapse show" id="multiCollapseExample1">
-                                <div class="card card-body">
-                                    <ReviewHunter :hunter="hunter" />
-                                </div>
+                            <div class="col-12">
+                                <div class="collapse multi-collapse" id="multiCollapseExample2">
+                                    <div class="card card-body">
+                                        <h2>Services </h2>
+                                        <p class="text-description"> {{ hunter.services }} </p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col">
-                                <div class="collapse multi-collapse" id="multiCollapseExample2">
-                                <div class="card card-body">
-                                    <ContactHunter :hunter="hunter" />
+                            <div class="col-12">
+                                <div class="collapse multi-collapse show" id="multiCollapseExample1">
+                                <div class="card ">
+                                    <ReviewHunter :hunter="hunter" />
+                                    <div class="reviews-wrapper">
+                                        <h3>
+                                            Reviews
+                                        </h3>
+                                        <div class="reviews"  v-for="review in hunter.reviews">
+                                            <div>
+                                                {{ review.name }} {{ review.surname }}
+                                            </div>
+                                            <div>
+                                                {{ review.vote }}
+                                            </div>
+                                            <div>
+                                                {{ review.review }}
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!--
+                
                 <div class="contact-hunter col-4">
                     <ContactHunter :hunter="hunter" />
-                    <ReviewHunter :hunter="hunter" />
+                    <!-- <ReviewHunter :hunter="hunter" /> -->
                 </div>
-                -->
+                
             </div>
         </div>
     </div>
@@ -179,6 +195,12 @@ export default {
     font-family: 'Raleway', sans-serif;
     font-weight: 600;
     padding: 0;
+    height: 370px;
+}
+
+.reviews-wrapper{
+    
+    border-top: 10px solid $text;
 }
 .margin-row{
     padding-top: 10rem;
