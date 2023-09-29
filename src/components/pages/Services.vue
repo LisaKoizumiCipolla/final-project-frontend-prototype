@@ -1,135 +1,162 @@
 <template>
     <div class="wrapper-about">
-        <div class="container">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-8 col-lg-10">
+            <h1 class="text-center title">
+              Our Services
+            </h1>
             <div class="row justify-content-center">
-                <div class="col-8 col-lg-10">
-                    <h1 class="text-center title">
-                        Boia de
-                    </h1>
-                    <div class="row justify-content-center">
-                        <img class="brand-logo mx-auto" src="../../assets/hunters tooth and talon_intero.png" alt="">
-                    </div>
-                    
-                    <!-- Card 1 -->
-                    <div class="card-hunter">
-                        <div class="card-content text-center">
-                            <p class="mb-lg-5">
-                                Welcome to Hunters Tooth and Talon, your ultimate destination for the finest hunting experiences.
-                                Founded by a group of passionate hunters with a deep-rooted love for the outdoors
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="row justify-content-between bottom-card-container">
-                        <!-- Card 2 -->
-                        <h2 class="text-center mb-5">
-                            Why you should choose us?
-                        </h2>
-                        <div class="card-hunter col-12 col-md-4">
-                            <div class="card-content">
-                                <p>
-                                    Our company is dedicated to providing you with the highest level of expertise and qualifications in the hunting industry.
-                                </p>
-                            </div>
-                        </div>
-    
-                        <!-- Card 3 -->
-                        <div class="card-hunter col-12 col-md-4">
-                            <div class="card-content">
-                                <p>
-                                    At Hunters Tooth and Talon, we believe in preserving the rich traditions of hunting while embracing modern techniques and ethical practices.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="card-hunter col-12 col-md-4">
-                            <div class="card-content">
-                                <p>
-                                    Hunter Tooth and Talon are founded for you to take care of the enemies you need to rid of choose one 
-                                    of our best hunters
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <img class="brand-logo mx-auto" src="../../assets/hunters tooth and talon_intero.png" alt="">
             </div>
+  
+            <div class="row justify-content-between bottom-card-container">
+              <h2 class="text-center mb-5">
+                Promises to the Customer
+              </h2>
+              <!-- Card 1 -->
+              <div class="card-hunter col-12 col-md-3">
+                <h3 class="text-center">
+                  Fast Service
+                </h3>
+                <div class="card-content d-flex flex-column align-items-center">
+                  <i class="fa-solid fa-bolt style-icon fa-3x mb-4"></i>
+                  <p>
+                    We provide lightning-fast service to meet your needs.
+                  </p>
+                </div>
+              </div>
+              <!-- Card 1 -->
+  
+              <!-- Card 2 -->
+              <div class="card-hunter col-12 col-md-3">
+                <h3 class="text-center">
+                  Professionalism
+                </h3>
+                <div class="card-content d-flex flex-column align-items-center">
+                  <i class="fa-solid fa-user-tie style-icon fa-3x mb-4"></i>
+                  <p>
+                    Our team consists of highly skilled professionals.
+                  </p>
+                </div>
+              </div>
+              <!-- Card 2 -->
+  
+              <!-- Card 3 -->
+              <div class="card-hunter col-12 col-md-3">
+                <h3 class="text-center">
+                  Quality Assurance
+                </h3>
+                <div class="card-content d-flex flex-column align-items-center">
+                  <i class="fa-solid fa-check-circle style-icon fa-3x mb-4"></i>
+                  <p>
+                    We ensure the highest quality in all our services.
+                  </p>
+                </div>
+              </div>
+              <!-- Card 3 -->
+  
+              <!-- Card 4 -->
+              <div class="card-hunter col-12 col-md-3">
+                <h3 class="text-center">
+                  24/7 Support
+                </h3>
+                <div class="card-content d-flex flex-column align-items-center">
+                  <i class="fa-solid fa-headset style-icon fa-3x mb-4"></i>
+                  <p>
+                    Our support team is available round the clock.
+                  </p>
+                </div>
+              </div>
+              <!-- Card 4 -->
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-</template>
-
-
-<script>
-
-export default {
-
-
-    
-}
-</script>
+  </template>
+  
+  <script>
+  export default {
+    // Your script logic goes here
+  }
+  </script>
 <style lang="scss" scoped>
 @use '../../styles/partials/variables.scss' as *;
 @use '../../styles/style.scss' as *;
 
-.wrapper-about{
+.style-icon {
+  border: 5px solid $secondary;
+  padding: 1rem;
+  border-radius: 50%;
+  color: $secondary;
+}
 
-    // background-color: $background;
-    background-image: url(../../assets/hunter.bg.jpg);
-    // background-size: cover;
+.wrapper-about {
+  background-image: url(../../assets/hunter.bg.jpg);
+  padding-top: 10rem;
 
-    p{
-        font-family: 'Raleway';
-        font-size: 1.3rem;
-        color: $text;
-    }
+  p {
+    font-family: 'Raleway';
+    font-size: 1rem;
+    color: $background;
+    margin-top: 1rem;
+  }
 
-    padding-top: 10rem;
+  .brand-logo {
+    height: 250px;
+    width: 300px;
+    margin-bottom: 5rem;
+    filter: invert(1);
+  }
 
-    .brand-logo{
-        height: 250px;
-        width: 300px;
-        margin-bottom: 5rem;
-        filter: invert(1);
-    }
+  .title {
+    color: $text;
+    font-family: 'Cinzel Decorative';
+    font-weight: 600;
+    font-size: 3rem;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+  }
 
-    .title{
-        color: $text;
-        font-family: 'Cinzel Decorative';
-        font-weight: 600;
-        font-size: 3rem;
-        padding-bottom: 2rem;
-        padding-top: 2rem;
-    }
-
-
-.card-hunter {
+  .card-hunter {
     transition: ease-out 0.5s;
     transform: scale(1);
-}
+    background-color: white;
+    height: 340px;
+    width: 400px;
+    margin-bottom: 4rem;
+    border-radius: 1rem; /* Add rounded corners to the cards */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    overflow: hidden; /* Hide content overflow */
+  }
 
-.card-hunter:hover {
-    transform: scale(1.2);
-}
+  .card-hunter:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+  }
 
-.card-hunter:not(:hover) {
-    transition: ease-in 0.5s; /* Animazione più lenta all'hover out */
-}
-
-
-.card-content {
+  .card-content {
     padding: 1.5rem;
-    border-radius: 2rem;
-}
+    border-radius: 1rem;
+    text-align: center; /* Center-align content */
+  }
 
-.bottom-card-container{
-    
-
-    h2{
-        font-family: 'Cinzel Decorative';
-        color: $text;
-        padding: 1rem;
-        font-size: 3rem;
-        font-weight: 600;
+  .bottom-card-container {
+    h2 {
+      font-family: 'Cinzel Decorative';
+      color: $text;
+      padding: 1rem;
+      font-size: 2.4rem;
+      font-weight: 600;
     }
+  }
+
+  h3 {
+    font-family: 'Cinzel Decorative';
+    font-weight: 600;
+    margin-top: 1rem;
+    color: $secondary; /* Match card icon color */
+  }
 }
-}
-    
 </style>

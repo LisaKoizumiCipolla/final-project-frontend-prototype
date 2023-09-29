@@ -42,10 +42,10 @@ export default {
         background-color: $text;
         margin-bottom: 20px;
         margin-right: 15px;
+        transition: 0.5s;
 
         &:hover{
             cursor: pointer;
-            transition: .5s;
             border-bottom-right-radius: 25px;
             box-shadow: rgba(209, 65, 65, 0.795) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
         }
