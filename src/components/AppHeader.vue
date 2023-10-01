@@ -2,8 +2,9 @@
     <header class="fixed-top">
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top " id="mainNav">
             <div class="container-fluid p-0 p-lg-4 d-flex">
-                    <a class="navbar-brand ps-4" href="/">
-                        <img src="../assets/navbar-logo.png" alt="...">
+                    <a class="navbar-brand ps-3" href="/">
+                        <img class="d-sm-block d-lg-none logo-mobile" src="../assets/navbar-logo.png" alt="...">
+                        <img class="logo-desktop d-none d-lg-block" src="../assets/assets/hunters tooth and talon logo_positivo_homepage.png" alt="...">
                     </a>
                     <button class="navbar-toggler me-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -107,6 +108,10 @@ nav{
         height: 65px;
         filter: invert(1);
     }
+}
+
+.logo-desktop{
+    height: 35px;
 }
 
     
