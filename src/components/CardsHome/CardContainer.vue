@@ -5,7 +5,7 @@
         :image="hunter.image"
         :name="hunter.name"
         :surname="hunter.surname"
-        :specialization="hunter.specialization"/>
+        :specialization="hunter.specializations"/>
     </div>
 </template>
 <script>
@@ -37,8 +37,7 @@ export default {
       .catch((error) => {
         console.error(error);
       });
-    }
-
+    },
     },
     created(){
         this.getSponsoredHunter();

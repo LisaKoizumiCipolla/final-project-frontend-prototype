@@ -9,7 +9,12 @@
                     {{ name }} {{ surname }}
                 </h2>
                 <h3>
-                   SPECIALIZATION: {{ specialization }} {{ reviews }}
+                    SPECIALIZATIONS:
+                    <span v-for="specializationItem in specialization">     
+                           <span>
+                               {{ specializationItem.name }} ,
+                           </span>
+                    </span>
                 </h3>
                 <span class="badge rounded-pill text-bg-warning">Best Hunters</span>
             </div>
