@@ -43,11 +43,9 @@
         <h1>
           Let the hunt begin!
         </h1>
-        <div class="row">
           <div class="col-9 mx-auto text-sponsored px-4 px-0">
             These are the best hunters according to our customers' reviews. Our dedication to excellence and passion for hunting have made us leaders in the industry.
           </div>
-        </div>
 
         <div class="sponsored">
           <CardContainer />
