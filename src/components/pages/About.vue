@@ -57,31 +57,31 @@
                         OURS DEVELOPERS
                     </h1>
                     <div class="flex-wrap d-flex container">                        
-                        <div class="member">
+                        <div class="member m-lg-0 m-md-3 m-sm-5">
                             <img src="../../../public/Fra.png" alt="Fra">
                             <h3>
                                 Francesco - Junior Web Developer
                             </h3>
                         </div>
-                        <div class="member">
+                        <div class="member m-lg-0 m-md-3 m-sm-5">
                             <img src="../../../public/Gabri.png" alt="Gabri">
                             <h3>
                                 Gabriele - Junior Web Developer
                             </h3>
                         </div>
-                        <div class="member">
+                        <div class="member m-lg-0 m-md-3 m-sm-5">
                             <img src="../../../public/Momo.png" alt="Momo">
                             <h3>
                                 Mohamed - Junior Web Developer
                             </h3>
                         </div>
-                        <div class="member">
+                        <div class="member m-lg-0 m-md-3 m-sm-5">
                             <img src="../../../public/Lisa.png" alt="Lisa">
                             <h3>
                                 Lisa - Junior Web Developer
                             </h3>
                         </div>
-                        <div class="member">
+                        <div class="member m-lg-0 m-md-3 m-sm-5">
                             <img src="../../../public/Juan.png" alt="Juan">
                             <h3>
                                 Juan - Junior Web Developer
@@ -151,13 +151,13 @@ export default {
     transition: ease-in 0.5s; /* Animazione più lenta all'hover out */
 }
 .member{
-    width: calc(100% / 3);
+    max-width: calc(100% / 3);
     margin-bottom: 55px;
     text-align: center;
     img{
         border-radius: 50%;
-        width: 200px;
-        height: 200px;
+        width: 150px;
+        height: 150px;
         object-fit: cover;
         object-position: center center;
     };
@@ -172,6 +172,12 @@ export default {
     }
 .member:not(:hover) {
     transition: ease-out 0.5s;
+}
+@media screen {
+    .member{
+        width: calc(100% / 2);
+    }
+    
 }
 .card-content {
     padding: 1.5rem;
