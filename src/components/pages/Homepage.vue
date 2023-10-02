@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <img src="../../assets/hunters tooth and talon_intero.png" class="logo" id="mobile-size" alt="">
-    <div id="carouselExample" class="carousel slide">
+    <div id="carouselExampleIntervall" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
       <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -10,10 +10,10 @@
       <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="4" aria-label="Slide 5"></button>
      </div>
       <div class="carousel-inner">
-        <div class="carousel-item active">
+        <div class="carousel-item active" data-bs-interval="6000">
           <img src="https://cdnb.artstation.com/p/assets/images/images/014/478/623/large/caio-monteiro-010.jpg?1544112638" class="d-block w-100" alt="...">
         </div>
-        <div class="carousel-item">
+        <div class="carousel-item" data-bs-interval="2000">
           <!-- Correct the URL of your second image -->
           <img src="https://cdn.discordapp.com/attachments/1134115229098324073/1151092130333343754/Diablo_Warriors_Monsters_Arthas_Barbarian_Battle_533442_1920x1080.png" class="d-block w-100" alt="...">
         </div>
@@ -27,11 +27,11 @@
           <img src="https://cdn.wallpapersafari.com/1/81/kHuKpN.jpg" class="d-block w-100" alt="...">
         </div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
       </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
@@ -112,7 +112,7 @@ export default {
       search:'',      
       store,
       specializations : [],
-      apiUrl:'http://127.0.0.1:8000/api/select'
+      apiUrl:'http://127.0.0.1:8000/api/filter'
     };
   },
   methods: {
