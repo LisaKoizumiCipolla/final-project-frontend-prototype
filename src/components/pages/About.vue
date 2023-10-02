@@ -51,6 +51,43 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- DEVELOPERS -->
+                    <h1 class="text-center title">
+                        OURS DEVELOPERS
+                    </h1>
+                    <div class="flex-wrap d-flex container">                        
+                        <div class="member">
+                            <img src="../../../public/Fra.png" alt="Fra">
+                            <h3>
+                                Francesco - Junior Web Developer
+                            </h3>
+                        </div>
+                        <div class="member">
+                            <img src="../../../public/Gabri.png" alt="Gabri">
+                            <h3>
+                                Gabriele - Junior Web Developer
+                            </h3>
+                        </div>
+                        <div class="member">
+                            <img src="../../../public/Momo.png" alt="Momo">
+                            <h3>
+                                Mohamed - Junior Web Developer
+                            </h3>
+                        </div>
+                        <div class="member">
+                            <img src="../../../public/Lisa.png" alt="Lisa">
+                            <h3>
+                                Lisa - Junior Web Developer
+                            </h3>
+                        </div>
+                        <div class="member">
+                            <img src="../../../public/Juan.png" alt="Juan">
+                            <h3>
+                                Juan - Junior Web Developer
+                            </h3>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -113,16 +150,35 @@ export default {
 .card-hunter:not(:hover) {
     transition: ease-in 0.5s; /* Animazione più lenta all'hover out */
 }
-
-
+.member{
+    width: calc(100% / 3);
+    margin-bottom: 55px;
+    text-align: center;
+    img{
+        border-radius: 50%;
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        object-position: center center;
+    };
+    h3{
+        color:white;
+        font-family: 'Cinzel Decorative';
+    }
+}
+.member:hover{
+    transition: ease-out 0.5s;
+    transform: scale(1.2); 
+    }
+.member:not(:hover) {
+    transition: ease-out 0.5s;
+}
 .card-content {
     padding: 1.5rem;
     border-radius: 2rem;
 }
 
 .bottom-card-container{
-    
-
     h2{
         font-family: 'Cinzel Decorative';
         color: $text;
