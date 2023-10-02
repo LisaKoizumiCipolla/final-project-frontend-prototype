@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <img src="../../assets/hunters tooth and talon_intero.png" class="logo" id="mobile-size" alt="">
-    <div id="carouselExampleIntervall" class="carousel slide" data-bs-ride="carousel">
+    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
       <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1" aria-label="Slide 2"></button>
