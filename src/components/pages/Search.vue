@@ -6,12 +6,18 @@
     <section class="container  filter">
     <!-- SELECT SPECIALIZATION -->
       <div class="row d-flex justify-content-around ">
+
+        <h1>
+          {{ store.searchValue }}
+        </h1>
+      
+
         <select class="select-style col-4 mb-4 " name="type-select" id="type-select" v-model="selectedSpecialization">
-          <option :value='store.searchValue' active selected>You selected {{ store.searchValue }}</option>
-          <option class="option-style" v-for="specialization in specializations" :value="specialization.name" >
-              {{ specialization.name }}
-          </option>
-        </select>
+  <option :value="store.searchValue" selected>You selected {{ store.searchValue }}</option> 
+  <option class="option-style" v-for="specialization in specializations" :value="specialization.name">
+      {{ specialization.name }}
+  </option>
+</select>
           <!-- SELECT VOTE -->
         <select class="mb-4 select-style col-3" name="" id="" v-model="vote">
           <option value="" disable selected>Vote</option>
@@ -83,6 +89,13 @@ export default {
       }
   },
 
+  watch: {
+    'store.searchValue'(newVal, oldVal) {
+      // Questa funzione viene chiamata ogni volta che store.searchValue cambia
+      this.selectedSpecialization = newVal;
+    },
+  },
+
         //$specialization = $request->input('specialization');
         //$minReview = $request->input('min_review');
         //$minAverage = $request->input('min_average');
@@ -104,6 +117,7 @@ export default {
           });
       },
     
+      
   
     
 
@@ -149,8 +163,12 @@ export default {
       created() {
       this.getSpecializations();
       
+      console.log(this.store.searchValue);
 
     },
+    computed:{
+      
+    }
    
   }
   
