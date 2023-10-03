@@ -154,6 +154,7 @@ export default {
     max-width: calc(100% / 3);
     margin-bottom: 55px;
     text-align: center;
+    margin-bottom: 1rem;
     img{
         border-radius: 50%;
         width: 150px;
@@ -165,19 +166,6 @@ export default {
         color:white;
         font-family: 'Cinzel Decorative';
     }
-}
-.member:hover{
-    transition: ease-out 0.5s;
-    transform: scale(1.2); 
-    }
-.member:not(:hover) {
-    transition: ease-out 0.5s;
-}
-@media screen {
-    .member{
-        width: calc(100% / 2);
-    }
-    
 }
 .card-content {
     padding: 1.5rem;
