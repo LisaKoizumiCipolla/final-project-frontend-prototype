@@ -7,10 +7,6 @@
     <!-- SELECT SPECIALIZATION -->
       <div class="row d-flex justify-content-around ">
 
-        <h1>
-          {{ store.searchValue }}
-        </h1>
-      
 
         <select class="select-style col-4 mb-4 " name="type-select" id="type-select" v-model="selectedSpecialization">
   <option :value="store.searchValue" selected>You selected {{ store.searchValue }}</option> 
