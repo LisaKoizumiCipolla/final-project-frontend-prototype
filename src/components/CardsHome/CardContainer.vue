@@ -1,14 +1,16 @@
 <template>
     <div class="wrapper d-flex flex-wrap">
-        <SingleCard v-for="hunter in hunters" 
-        :thumb="hunter.thumb"
+        <SingleCard class="card" v-for="hunter in sponsoredHunters" 
+        :user_id="hunter.user_id"
+        :image="hunter.image"
         :name="hunter.name"
         :surname="hunter.surname"
-        :specialization="hunter.specialization"/>
+        :specialization="hunter.specializations"/>
     </div>
 </template>
 <script>
-import SingleCard from './SingleCard.vue';
+import SingleCard from '../CardsHome/SingleCard.vue';
+import axios from 'axios';
 
 export default {
     name: 'CardContainer',
@@ -18,41 +20,38 @@ export default {
     },
     data() {
         return {
-            hunters:[
-                {
-                    thumb: 'https://hips.hearstapps.com/hmg-prod/images/supernatural-dean-winchester-1556276848.jpg?crop=0.668xw:1.00xh;0.167xw,0&resize=1200:*',
-                    name: 'Dean',
-                    surname: 'Winchester',
-                    specialization: 'Demons'
-                },
-                {
-                    thumb: 'https://i.pinimg.com/564x/86/03/7c/86037cf1698c735a3c6ce3d6540f9567.jpg',
-                    name: 'Maka',
-                    surname: 'Albarn',
-                    specialization: 'Ghosts'
-                },
-                {
-                    thumb: 'https://i.pinimg.com/1200x/46/a8/ee/46a8ee83264088b873a8efd562a36de8.jpg',
-                    name: 'Ellen Louise',
-                    surname: 'Ripley',
-                    specialization: 'Aliens'
-                },
-                {
-                    thumb: 'https://i.pinimg.com/originals/55/7b/9b/557b9b3fdfec1bd85753c08b06b68cef.jpg',
-                    name: 'Seraphina',
-                    surname: 'Lightwing',
-                    specialization: 'Angels'
-                },
-            ]
+            sponsoredHunters:[],
+            apiUrl:'http://127.0.0.1:8000/api/sponsored',
         }
     },
-    
+    methods:{
+        getSponsoredHunter(){
+
+        axios.get(this.apiUrl, {
+      })
+      .then((response) => {
+        this.sponsoredHunters = response.data.results;
+        console.log(this.sponsoredHunters);
+       
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+    },
+    },
+    created(){
+        this.getSponsoredHunter();
+    }
 }
+//http://127.0.0.1:8000/api/sponsored
 </script>
 <style lang="scss" scoped>
     .wrapper{
         height: 100%;
         width: 100%;
         justify-content: center;
+    }
+    .card{
+        min-width: 350px;
     }
 </style>

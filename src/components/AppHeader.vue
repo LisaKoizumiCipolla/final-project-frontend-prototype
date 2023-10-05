@@ -1,26 +1,27 @@
 <template>
     <header class="fixed-top">
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top " id="mainNav">
-            <div class="navbar-content d-flex align-items-center justify-content-between px-5">
-                <a class="navbar-brand" href="./">
-                    <img src="../assets/navbar-logo.png" alt="...">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                
-                    <svg class="svg-inline--fa fa-bars ms-1" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"></path></svg><!-- <i class="fas fa-bars ms-1"></i> Font Awesome fontawesome.com -->
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                        <li class="nav-item" v-for = "link in links">
-
-                            <router-link :to="link.route" class="nav-link">
-                                {{ link.name }}
-                            </router-link>
-                        </li>    
-                    </ul>
+            <div class="container-fluid p-0 p-lg-4 d-flex">
+                    <a class="navbar-brand ps-3" href="/">
+                        <img class="d-sm-block d-lg-none logo-mobile" src="../assets/navbar-logo.png" alt="...">
+                        <img class="logo-desktop d-none d-lg-block" src="../assets/assets/hunters tooth and talon logo_positivo_homepage.png" alt="...">
+                    </a>
+                    <button class="navbar-toggler me-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end  mt-3 mt-lg-0 bg-dark-mobile" id="navbarResponsive">
+                        <div class="navbar-nav pt-md-0">
+                            <a class="nav-link text-center hover-link" v-for="link in links" :key="link.name">
+                                <router-link v-if="link.name !== 'LOGIN' && link.name !== 'SIGNIN'" :to="link.route" class="nav-link">
+                                    {{ link.name }}
+                                </router-link>
+                                <a v-else :href="link.route" class="nav-link">
+                                    {{ link.name }}
+                                </a>
+                            </a>    
+                        </div>
+                    </div>
                 </div>
-                
-            </div>
         </nav>
     </header>
 </template>
@@ -33,27 +34,28 @@ export default {
             links : [
 
                 {
-                    route: './',
+                    route: '/',
                     name: 'HOME'
                 },
                 {
-                    route: './services',
+                    route: '/services',
                     name: 'SERVICES'
                 },
                 {
-                    route: './about',
+                    route: '/about',
                     name: 'ABOUT'
                 },                             
                 
                 {
-                    route: './registration',
+                    route: 'http://127.0.0.1:8000/register',
                     name: 'SIGNIN'
                 },
                 {
-                    route: './login',
+                    route: 'http://127.0.0.1:8000/login',
                     name: 'LOGIN'
                 },
             ]
+            
            
         }
     },
@@ -62,6 +64,16 @@ export default {
 <style lang="scss" scoped>
 
 @use '../styles/partials/variables' as *;
+
+@media screen and (max-width: 960px) {
+  .bg-dark-mobile{
+    background-color: rgba($color: #000000, $alpha: 0.95);
+  }
+  .hover-link:hover{
+    background-color: $secondary;
+    transition: 0.5s;
+  }
+}
 
 header{
     height: 100px;
@@ -81,12 +93,25 @@ nav{
         
     height: 100%;
     width: 100%;
+
+    ul{
+        li{
+                transition: all 2s;
+            &:hover{
+                text-decoration:underline;
+            }
+        }
+    }
     }
 
     img{
         height: 65px;
         filter: invert(1);
     }
+}
+
+.logo-desktop{
+    height: 35px;
 }
 
     

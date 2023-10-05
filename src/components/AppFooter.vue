@@ -5,10 +5,11 @@
                 <div class="col-lg-6 offset-lg-3">
                     <div class="contact-content text-center">
                         <a href="#"><img src="../assets/hunters tooth and talon_intero.png" alt="logo"></a>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum </p>
+                        <p> Hunter Tooth and Talon are founded for you to take care of the enemies you need to rid of choose one 
+                                    of our best hunters </p>
                         <div class="hr"></div>
-                        <h6>1120 Lorem ipsum dolor sit amet, KC 179050, Chandigarh.</h6>
-                        <h6><a class="phone text-decoration-none" href="">+01 2345 6789 12</a><span>|</span><a class="phone text-decoration-none" href="">+01 2345 6789 12</a></h6>
+                        <h6>1120  Hunter Tooth and Talon, IT 179050, Rome.</h6>
+                        <h6><a class="phone text-decoration-none" href="">+39 2345 6789 12</a><span>|</span><a class="phone text-decoration-none" href="">+39 2345 6789 12</a></h6>
                         <div class="contact-social">
                             <ul>
                                 <li><a class="hover-target" href=""><i class="fab fa-facebook-f"></i></a></li>
@@ -24,7 +25,7 @@
         </div>
 
         <footer>
-        <p>Copyright &copy; 2019 <img src="../assets/navbar-logo.png" alt="logo"> All Rights Reserved.</p>
+        <p>Copyright &copy; 2023 <img src="../assets/navbar-logo.png" alt="logo"> All Rights Reserved.</p>
         </footer>
     </section>
     <!-- =============== 1.9 Contact Area End ====================-->
