@@ -24,14 +24,14 @@
                     <div class="content">
                         <p class="d-inline-flex gap-1">
                             
-                            <button class="btn " type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="true" aria-controls="multiCollapseExample1">Services</button>
+                            <button class="btn text-center" type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="true" aria-controls="multiCollapseExample1">Services</button>
                             <a class="btn " data-bs-toggle="collapse" href="#multiCollapseExample2" role="button" aria-expanded="false" aria-controls="multiCollapseExample2">Leave a review</a>
                         </p>
                         <div class="row">
                             <div class="col-12">
                                 <div class="collapse multi-collapse" id="multiCollapseExample1">
                                     <div class="card card-body">
-                                        <h2>Services </h2>
+                                        <h3>Services </h3>
                                         <p class="text-description"> {{ hunter.services }} </p>
                                     </div>
                                 </div>
@@ -54,8 +54,8 @@
                                                     Reviews
                                                 </h3>
                                                 <div class="reviews"  v-for="review in hunter.reviews">
-                                                    <div>
-                                                        Reviewer: {{ review.name }} {{ review.surname }}
+                                                    <div class="fw-semibold">
+                                                        {{ review.name }} {{ review.surname }}
                                                     </div>
                                                     <div>
                                                         Vote: {{ review.vote }}
@@ -175,7 +175,8 @@ export default {
             list-style-type: none;
 
             li{
-                font-family: 'Raleway', sans-serif;
+                font-family: 'Cinzel Decorative', cursive;
+                margin-left: -20px;
             }
         }
 

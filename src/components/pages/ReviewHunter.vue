@@ -1,7 +1,7 @@
 <template>
                     <form @submit.prevent="sendReviewHunter" @reset.prevent="clearForm" class="review" action="">
                       
-                      <div class="form-element infoalert alert-primary" role="alert" v-if="response === true">
+                      <div class="alert-primary" role="alert" v-if="response === true">
                         <h3>
                           Your message has been sent successfully!
                         </h3>
